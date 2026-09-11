@@ -1,0 +1,25 @@
+---
+import {locales,type Locale} from '../i18n/locales';
+import type {Messages} from '../i18n/messages';
+interface Props {locale:Locale;t:Messages;name:string;}
+const {locale,t,name}=Astro.props;
+---
+<a class="skip" href="#main">{t.skip}</a>
+<header class="header">
+ <a class="brand" href={'/'+locale+'/'} aria-label={name}><span class="brand-icon" aria-hidden="true">☾</span><span>{name}</span></a>
+ <nav aria-label={t.features} class="desktop-nav"><a href="#features">{t.features}</a><a href="#approach">{t.approach}</a><a href="#faq">{t.faq}</a></nav>
+ <div class="header-actions">
+ <details class="language"><summary><span aria-hidden="true">◎</span> {locales[locale]} <span aria-hidden="true">⌄</span></summary><nav class="language-list" aria-label={t.language}>{Object.entries(locales).map(([code,label])=><a href={'/'+code+'/'} lang={code} hreflang={code} aria-current={code===locale?'page':undefined}>{label}<span aria-hidden="true">{code===locale?'✓':''}</span></a>)}</nav></details>
+ <a class="button header-cta" href="#download">{t.cta}<span aria-hidden="true">↗</span></a>
+ </div>
+</header>
+<script is:inline>
+document.addEventListener('click',event=>{
+ const target=event.target;
+ if(target instanceof Element && !target.closest('.language')) document.querySelectorAll('.language[open]').forEach(el=>el.open=false);
+});
+document.addEventListener('keydown',event=>{
+ if(event.key==='Escape') document.querySelectorAll('.language[open]').forEach(el=>{el.open=false;el.querySelector('summary')?.focus()});
+});
+</script>
+

@@ -1,0 +1,23 @@
+---
+import {locales,localeCodes,type Locale} from '../i18n/locales';
+interface Props {name:string;title:string;description:string;locale:Locale;site:URL|undefined;}
+const {name,title,description,locale,site}=Astro.props;
+const origin = site ?? new URL('https://simple-cbt-i-henor.proud-degu-7440.chatgpt.site');
+const canonical = new URL('/'+locale+'/',origin).href;
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{localeCodes.map(code=><link rel="alternate" hreflang={code} href={new URL('/'+code+'/',origin).href}/>)}
+<link rel="alternate" hreflang="x-default" href={new URL('/ja/',origin).href}/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content={name}/>
+<meta property="og:title" content={title}/>
+<meta property="og:description" content={description}/>
+<meta property="og:url" content={canonical}/>
+<meta property="og:locale" content={locale.replace('-','_')}/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content={title}/>
+<meta name="twitter:description" content={description}/>
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name,url:canonical,inLanguage:locale,description}).replace(/</g,'\\u003c')}/>
+

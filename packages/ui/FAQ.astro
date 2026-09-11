@@ -1,0 +1,10 @@
+---
+import type {Messages} from '../i18n/messages';
+interface Props {t:Messages;}
+const {t}=Astro.props;
+---
+<section class="faq section wrap" id="faq">
+ <div><span class="eyebrow">FAQ</span><h2>{t.faqTitle}</h2></div>
+ <div class="questions">{[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3]].map(([q,a])=><details><summary>{q}<span class="plus" aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div>
+</section>
+
