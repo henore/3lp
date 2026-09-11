@@ -2,7 +2,7 @@
 import {locales,localeCodes,type Locale} from '../i18n/locales';
 interface Props {name:string;title:string;description:string;locale:Locale;site:URL|undefined;}
 const {name,title,description,locale,site}=Astro.props;
-const origin = site ?? new URL('https://simple-cbt-i-henor.proud-degu-7440.chatgpt.site');
+const origin = site ?? new URL('https://simple-cbt-i-henor.happybeautiful111.chatgpt.site');
 const canonical = new URL('/'+locale+'/',origin).href;
 ---
 <title>{title}</title>
