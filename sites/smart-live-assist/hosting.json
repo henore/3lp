@@ -1,7 +1,7 @@
 {
   "project_id": "appgprj_6aa51b6c8bc081918d24aa44547b1d43",
   "static": {
-    "directory": "build-sla",
+    "directory": "build",
     "not_found_handling": "404-page"
   }
 }

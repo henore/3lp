@@ -16,3 +16,6 @@ pkg.scripts.dev=pkg.scripts['dev:sla'];
 pkg.scripts.check=pkg.scripts['check:sla'];
 fs.writeFileSync(path.join(destination,'package.json'),JSON.stringify(pkg,null,2)+'\n');
 console.log('Prepared SLA-only deployment snapshot at '+destination);
+
+const astroConfig=path.join(destination,'apps/smart-live-assist/astro.config.mjs');
+fs.writeFileSync(astroConfig,fs.readFileSync(astroConfig,'utf8').replace('../../build-sla','../../build'));
