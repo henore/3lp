@@ -1,0 +1,13 @@
+---
+import LandingPage from '../../../../packages/ui/LandingPage.astro';
+import {slaApp} from '../../../../packages/config/sla';
+import {slaMessages} from '../../../../packages/i18n/sla';
+import type {Locale} from '../../../../packages/i18n/locales';
+import Preview from './Preview.astro';
+import Gallery from './Gallery.astro';
+import theme from './theme.css?inline';
+interface Props {locale:Locale;}
+const {locale}=Astro.props;const t=slaMessages[locale];
+---
+<LandingPage app={slaApp} t={t} locale={locale} theme={theme} featureIcons={['book','chart','timer']}><Preview slot="preview" t={t}/><Gallery slot="feature-detail" t={t}/></LandingPage>
+

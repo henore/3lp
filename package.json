@@ -14,7 +14,11 @@
     "dev:fast": "astro dev --root apps/simple-fasting-timer --host 127.0.0.1 --port 4322",
     "build:fast": "astro build --root apps/simple-fasting-timer",
     "check:fast": "astro check --root apps/simple-fasting-timer",
-    "verify:fast": "node scripts/verify.mjs build"
+    "verify:fast": "node scripts/verify.mjs build",
+    "dev:sla": "astro dev --root apps/smart-live-assist --host 127.0.0.1 --port 4323",
+    "build:sla": "astro build --root apps/smart-live-assist",
+    "check:sla": "astro check --root apps/smart-live-assist",
+    "verify:sla": "node scripts/verify.mjs build-sla"
   },
   "dependencies": {
     "astro": "^5.13.0"

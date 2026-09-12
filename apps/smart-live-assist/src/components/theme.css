@@ -1,0 +1,29 @@
+
+body[data-brand="smart-live-assist"]{--ink:#292037;--muted:#655c70;--line:#e9e2ef;--pale:#f6f0fa}
+[data-brand="smart-live-assist"] .brand-image{display:block;object-fit:contain;width:39px;height:39px;border-radius:10px;flex-shrink:0}
+[data-brand="smart-live-assist"] .brand{font-size:1.12rem}
+[data-brand="smart-live-assist"] .button:hover{background:#55177b}
+[data-brand="smart-live-assist"] .feature-icon{background:#f3e9fb}
+[data-brand="smart-live-assist"] .preview-scene::before{background:radial-gradient(ellipse,#e7d2fa 0%,#f6ebff 48%,#fdf9ff 68%,transparent 73%)}
+[data-brand="smart-live-assist"] .orbital{border-color:#b57bd340}
+[data-brand="smart-live-assist"] .approach{background:#27143a}
+[data-brand="smart-live-assist"] .approach p{color:#d9cce4}
+[data-brand="smart-live-assist"] .approach .eyebrow,[data-brand="smart-live-assist"] .step-number,[data-brand="smart-live-assist"] .step-mark{color:#dfb4ff}
+[data-brand="smart-live-assist"] .download{background:#f7effd;border-color:#e8d8f2}
+[data-brand="smart-live-assist"] .pending{border-color:#d8c2e7;color:#654778!important}
+[data-brand="smart-live-assist"] .sla-phone{padding:0;border:6px solid #392448;border-radius:27px;overflow:hidden;min-height:0;width:280px;background:#fafafa;box-shadow:18px 28px 55px #461b6424,0 0 0 1px #a98bbb}
+.sla-phone img{display:block;width:100%;height:auto}
+.sla-preview{min-height:670px;padding-bottom:85px}
+.sla-preview figcaption{font-size:.8125rem;line-height:1.65;max-width:360px;padding-inline:10px}
+.sla-gallery{margin-top:56px;border-top:1px solid var(--line);padding-top:40px}
+.sla-gallery h3{font-size:1.5rem}
+.sla-disclosure{font-size:.875rem;margin-top:12px}
+.sla-screen-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:30px}
+.sla-screen-card{min-width:0}
+.sla-screen-image{display:block;max-width:290px;margin-inline:auto;border:5px solid #dfcde9;border-radius:23px;overflow:hidden;background:#fafafa;box-shadow:0 12px 30px #451d6012}
+.sla-screen-image img{display:block;width:100%;height:auto}
+.sla-screen-card figcaption{position:static;transform:none;max-width:310px;margin:20px auto 0;text-align:start;line-height:1.8}
+.sla-screen-card figcaption strong{font-size:1.1rem;color:var(--ink)}
+.sla-screen-card figcaption p{font-size:.9375rem;margin-top:6px}
+@media(max-width:760px){[data-brand="smart-live-assist"] .header{gap:8px}[data-brand="smart-live-assist"] .brand{font-size:.95rem;white-space:normal;max-width:210px;line-height:1.5}[data-brand="smart-live-assist"] .brand-image{width:32px;height:32px}.sla-screen-grid{grid-template-columns:1fr;gap:36px}.sla-gallery{margin-top:36px}}
+
