@@ -6,6 +6,7 @@ Astro + TypeScript + npm workspaces。HTMLをビルド時に生成し、Reactな
 
 ```text
 apps/
+  simple-fasting-timer/   # 2本目: Home、TimerPreview、theme.css
   simple-cbt-i/
     astro.config.mjs
     public/favicon.svg
@@ -24,7 +25,7 @@ packages/
 scripts/verify.mjs    # 全言語・SEO・リンク検証
 ```
 
-残り2サイトは名称・仕様が未提示のため、架空のサイトは作成しない。追加時は `apps/<app-slug>` にAstroアプリを置き、共有コンポーネントをimportする。アプリ固有の紹介文は `packages/i18n/<app-slug>/` に切り出し、app設定を渡す。汎用UIにアプリ固有の機能を埋め込まない。Seoのブランド名はpropsで切り替える。
+2本目としてSimple Fasting Timerを追加済み。両サイトは `packages/ui/LandingPage.astro` を使用し、サイト構造そのものを共有する。Fasting固有の本文は `packages/i18n/fasting.ts`、設定は `packages/config/fasting.ts`、画面とテーマはアプリ配下に置く。3本目は名称・仕様の確定後に同じ方式で追加する。Seo、Header、Footer、StoreCTAはブランド情報をpropsで切り替える。
 
 ## 多言語
 

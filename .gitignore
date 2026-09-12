@@ -4,3 +4,5 @@ dist/
 .sites-runtime/
 .env
 test-results/
+
+build/

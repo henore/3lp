@@ -1,9 +1,8 @@
 ---
 import type {Messages} from '../i18n/messages';
 import type {AppConfig} from '../config/app';
-interface Props {t:Messages;stores:AppConfig['stores'];}
-const {t,stores}=Astro.props;
+interface Props {t:Messages;stores:AppConfig['stores'];name:string;joinUrl?:string;joinLabel?:string;notice?:string;}
+const {t,stores,name,joinUrl,joinLabel,notice}=Astro.props;
 ---
-<section id="download" class="download wrap"><div><span class="eyebrow">SIMPLE CBT-I</span><h2>{t.downloadTitle}</h2><p>{t.downloadBody}</p></div>
-<div class="store-area">{stores.apple&&<a class="store-link" href={stores.apple}>App Store <span aria-hidden="true">↗</span></a>}{stores.google&&<a class="store-link" href={stores.google}>Google Play <span aria-hidden="true">↗</span></a>}{!stores.apple&&!stores.google&&<p class="pending">{t.unavailable}</p>}</div></section>
-
+<section id="download" class="download wrap"><div><span class="eyebrow">{name.toUpperCase()}</span><h2>{t.downloadTitle}</h2><p>{t.downloadBody}</p>{notice&&<p class="test-note">{notice}</p>}</div>
+<div class="store-area">{joinUrl&&<a class="button join-link" href={joinUrl}>{joinLabel}<span aria-hidden="true">↗</span></a>}{stores.apple&&<a class="store-link" href={stores.apple}>App Store <span aria-hidden="true">↗</span></a>}{stores.google&&<a class="store-link" href={stores.google}>{joinUrl?'② ':''}Google Play <span aria-hidden="true">↗</span></a>}{!stores.apple&&!stores.google&&<p class="pending">{t.unavailable}</p>}</div></section>

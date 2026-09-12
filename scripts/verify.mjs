@@ -2,7 +2,7 @@ import {readFile,readdir,stat} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 const locales=['ja','en','zh-CN','zh-TW','ko','de','fr','es','it','pt-BR','nl','sv','pl','ru','ar','hi'];
-const root=path.resolve('dist');
+const root=path.resolve(process.argv[2] || 'dist');
 for(const locale of locales){
  const html=await readFile(path.join(root,locale,'index.html'),'utf8');
  assert(html.includes('lang="'+locale+'"'),locale+' lang');

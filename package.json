@@ -1,1 +1,28 @@
-{"name":"app-websites","private":true,"type":"module","workspaces":["apps/*","packages/*"],"scripts":{"dev":"astro dev --root apps/simple-cbt-i --host 127.0.0.1","build":"astro build --root apps/simple-cbt-i","check":"astro check --root apps/simple-cbt-i","verify":"node scripts/verify.mjs"},"dependencies":{"astro":"^5.13.0"},"devDependencies":{"@astrojs/check":"^0.9.4","typescript":"^5.9.2","@axe-core/playwright":"^4.10.2","playwright":"^1.55.0"}}
+{
+  "name": "app-websites",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "astro dev --root apps/simple-cbt-i --host 127.0.0.1",
+    "build": "astro build --root apps/simple-cbt-i",
+    "check": "astro check --root apps/simple-cbt-i",
+    "verify": "node scripts/verify.mjs",
+    "dev:fast": "astro dev --root apps/simple-fasting-timer --host 127.0.0.1 --port 4322",
+    "build:fast": "astro build --root apps/simple-fasting-timer",
+    "check:fast": "astro check --root apps/simple-fasting-timer",
+    "verify:fast": "node scripts/verify.mjs build"
+  },
+  "dependencies": {
+    "astro": "^5.13.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.2",
+    "@axe-core/playwright": "^4.10.2",
+    "playwright": "^1.55.0"
+  }
+}
