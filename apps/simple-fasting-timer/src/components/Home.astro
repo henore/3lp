@@ -4,9 +4,11 @@ import {fastingApp,testerGroup} from '../../../../packages/config/fasting';
 import {fastingMessages} from '../../../../packages/i18n/fasting';
 import type {Locale} from '../../../../packages/i18n/locales';
 import TimerPreview from './TimerPreview.astro';
+import ScreenshotGallery from './ScreenshotGallery.astro';
 import theme from '../styles/theme.css?inline';
 interface Props {locale:Locale;}
 const {locale}=Astro.props;const t=fastingMessages[locale];
 ---
-<LandingPage locale={locale} app={fastingApp} t={t} theme={theme} featureIcons={['timer','bell','chart']} joinUrl={testerGroup.url} joinLabel={t.joinLabel} storeNotice={t.testNote}><TimerPreview slot="preview" t={t} locale={locale}/></LandingPage>
+<LandingPage locale={locale} app={fastingApp} t={t} theme={theme} featureIcons={['timer','bell','chart']} joinUrl={testerGroup.url} joinLabel={t.joinLabel} storeNotice={t.testNote}><TimerPreview slot="preview" locale={locale}/><ScreenshotGallery slot="feature-detail" locale={locale}/></LandingPage>
+
 

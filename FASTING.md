@@ -7,7 +7,7 @@
 - `packages/config/fasting.ts`: 名前、ブランドカラー、アイコン、Google Play、テスターグループ
 - `packages/i18n/fasting.ts`: 16言語の製品コピー。共通のナビゲーション等は既存辞書を再利用
 - `apps/simple-fasting-timer/src/styles/theme.css`: チャコールとアンバーのテーマ。既存CBT-Iに影響しないブランド固有スタイル
-- `apps/simple-fasting-timer/src/components/TimerPreview.astro`: アプリの操作思想を表した画面イメージ
+- `apps/simple-fasting-timer/src/components/TimerPreview.astro`: ユーザー提供の実タイマー画面
 - `apps/simple-fasting-timer/public/icon.png`: 参照会話に添付された実際のアイコン
 - `sites/simple-fasting-timer/hosting.json`: Fasting専用Sites ID。ルートのCBT-IのIDを置換しない
 
@@ -37,7 +37,7 @@ Fastingの出力は `build/`、CBT-Iは `dist/`。相互に出力を削除しな
 
 参照内で旧価格と新価格が混在していたため、金額は固定表示せずアプリ内価格へ案内。未公開のiOS版の配布リンクは掲載しない。通知の到達保証や減量効果、時間ごとの身体変化は断定しない。
 
-画面は実スクリーンショットではなく、サイト向けの画面イメージとして明示。英語のTimer/Strong Alertなどの仕様を参照し、Webサイトの表示言語に合わせたサンプルにした。サイト自体はタイマーアプリではないため、画面内の長押し表示やスイッチは操作要素ではない。
+ユーザー提供の実スクリーンショット4枚を加工せず掲載。タイマーをヒーローに、履歴・統計・記録詳細を機能紹介に配置。英語版・撮影時点の表示と価格であることを16言語で明記。画像内のボタンは操作要素ではなく、ギャラリー画像は元画像へのリンク。
 
 ## 公開スナップショット
 
@@ -48,3 +48,4 @@ Fastingの出力は `build/`、CBT-Iは `dist/`。相互に出力を削除しな
 ## 未検証の範囲
 
 テスターグループへの実際の加入や、資格が必要なストアからのインストールは実行していない。ストアURLはユーザー提供値を採用。翻訳は初稿のため、一般公開前の各言語校閲を推奨する。
+

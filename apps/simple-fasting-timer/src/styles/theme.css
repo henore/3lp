@@ -19,16 +19,17 @@ body[data-brand="simple-fasting-timer"]{--ink:#22211e;--muted:#656159;--line:#e6
 [data-brand="simple-fasting-timer"] .test-note{font-size:.8125rem;max-width:550px;overflow-wrap:anywhere}
 [data-brand="simple-fasting-timer"] .join-link{font-size:.875rem;text-align:center}
 [data-brand="simple-fasting-timer"] .footer .brand-image{width:32px;height:32px}
-.fast-phone{background:#121211;border-color:#30302e;box-shadow:18px 28px 55px #35280e24,0 0 0 2px #88877f;color:#fff;min-height:500px}
-.fast-phone .phone-top{color:#eee}.fast-phone .phone-island{background:#000}
-.fast-phone .phone-content{padding-top:10px}.fast-phone .app-brand{gap:8px;direction:ltr}.fast-phone .app-brand img{border-radius:5px}.app-status{margin-inline-start:auto;font-size:.65rem;border:1px solid #80602c;padding:0 5px;border-radius:4px;color:#e9b75f}
-.fast-goal{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #34332e;padding:18px 0 12px}.fast-goal>span{color:#bab7af;font-size:.75rem}.fast-goal strong{font-size:1.1rem;font-weight:500}
-.timer-face{text-align:center;padding:28px 0 24px}.timer-label{font-size:.75rem;color:#bbb7af}.timer-face>strong{font-size:3.35rem;font-weight:400;line-height:1.6;letter-spacing:-.055em;display:block;white-space:nowrap}.timer-face strong span{font-size:1.1rem;font-weight:400;color:#e5d3b2;padding-inline:2px 4px}.timer-face p{font-size:.75rem;color:#d4c7b2;margin-top:10px}
-.timer-progress{height:4px;border-radius:5px;background:#484134;direction:ltr}.timer-progress i{display:block;width:77.5%;height:4px;border-radius:5px;background:#f4b24d}
-.alert-preview{display:flex;align-items:center;gap:9px;padding:12px 9px;border:1px solid #413a2d;border-radius:9px;background:#211e18}.alert-icon{color:#f6bc5f;font-size:1.25rem}.alert-preview strong{display:block;font-size:.75rem;font-weight:500;color:#f4cf91}.alert-preview div>span{display:block;font-size:.7rem;color:#c3b79f}.preview-toggle{margin-inline-start:auto;width:27px;height:15px;border-radius:10px;background:#e8ac4f;position:relative;flex-shrink:0}.preview-toggle::after{content:'';position:absolute;width:11px;height:11px;border-radius:50%;background:#25221a;right:2px;top:2px}
-.mock-meal{margin-block:20px 12px;border:1px solid #6c655b;border-radius:9px;text-align:center;padding:13px 5px;font-size:.8rem;color:#e7e2d9}
-.fast-tabs{display:flex;justify-content:space-around;border-top:1px solid #35332c;padding:13px 0;color:#a29a8c}.fast-tabs svg{width:22px;height:22px}.fast-tabs svg:first-child{color:#f6bb5a}
-@media(max-width:760px){[data-brand="simple-fasting-timer"] .header{gap:8px}[data-brand="simple-fasting-timer"] .brand{font-size:.92rem;white-space:normal;max-width:220px;line-height:1.5}[data-brand="simple-fasting-timer"] .brand-image{width:32px;height:32px}[data-brand="simple-fasting-timer"] .store-area{min-width:0;width:100%;max-width:none}.timer-face>strong{font-size:2.9rem}}
 
-
-.fast-phone .app-brand>.app-status{font-size:.75rem;color:#e9b75f}.alert-preview div>span{font-size:.75rem}
+.screenshot-phone{background:#000;padding:0;border:6px solid #222;border-radius:28px;overflow:hidden;min-height:0;width:270px;box-shadow:18px 28px 55px #35280e24,0 0 0 1px #777}
+.screenshot-phone img{width:100%;height:auto;display:block}
+.actual-preview{padding-bottom:85px;min-height:660px}
+.actual-preview figcaption{font-size:.8125rem;line-height:1.65;max-width:360px;padding-inline:10px}
+.screen-gallery{margin-top:56px;border-top:1px solid var(--line);padding-top:40px}
+.screen-gallery h3{font-size:1.5rem}
+.screen-disclosure{font-size:.875rem;margin-top:12px}
+.screen-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:30px}
+.screen-card{min-width:0}
+.screen-image{display:block;max-width:280px;margin-inline:auto;background:#000;border:5px solid #292929;border-radius:23px;overflow:hidden;box-shadow:0 12px 30px #00000012}
+.screen-image img{display:block;width:100%;height:auto}
+.screen-card figcaption{position:static;transform:none;max-width:300px;margin:20px auto 0;font-size:.9375rem;text-align:start;line-height:1.8}
+@media(max-width:760px){[data-brand="simple-fasting-timer"] .header{gap:8px}[data-brand="simple-fasting-timer"] .brand{font-size:.92rem;white-space:normal;max-width:220px;line-height:1.5}[data-brand="simple-fasting-timer"] .brand-image{width:32px;height:32px}[data-brand="simple-fasting-timer"] .store-area{min-width:0;width:100%;max-width:none}.screen-grid{grid-template-columns:1fr;gap:36px}.screen-gallery{margin-top:36px}.actual-preview{min-height:660px}}

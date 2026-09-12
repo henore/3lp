@@ -1,24 +1,12 @@
 ---
-import type {FastingMessages} from '../../../../packages/i18n/fasting';
-interface Props {t:FastingMessages;locale:string;}
-const {t,locale}=Astro.props;
-const hours=(n:number)=>new Intl.NumberFormat(locale,{style:'unit',unit:'hour',unitDisplay:'short'}).format(n);
-const minutes=(n:number)=>new Intl.NumberFormat(locale,{style:'unit',unit:'minute',unitDisplay:'short'}).format(n);
+import {screenCopy} from '../../../../packages/i18n/fasting-screens';
+import type {Locale} from '../../../../packages/i18n/locales';
+interface Props {locale:Locale;}
+const t=screenCopy[Astro.props.locale];
 ---
-<figure class="preview-scene">
-<div class="orbital orbital-one" aria-hidden="true"></div><div class="orbital orbital-two" aria-hidden="true"></div>
-<div class="phone fast-phone" dir="ltr">
- <div class="phone-top" aria-hidden="true"><span>9:41</span><span class="phone-island"></span><span>▰</span></div>
- <div class="phone-content" dir={locale==='ar'?'rtl':'ltr'}>
-  <div class="app-brand"><img src="/icon.png" alt="" width="25" height="25"/> Fast <span class="app-status">PRO</span></div>
-  <div class="fast-goal"><span>{t.goal}</span><strong>{hours(16)}</strong></div>
-  <div class="timer-face"><span class="timer-label">{t.elapsed}</span><strong><bdi>12<span>h</span>24<span>m</span></bdi></strong><div class="timer-progress" aria-hidden="true"><i></i></div><p>{t.remaining} <bdi>{hours(3)} {minutes(36)}</bdi></p></div>
-  <div class="alert-preview"><span class="alert-icon" aria-hidden="true">♬</span><div><strong>Strong Alert</strong><span>{t.goal} · {hours(16)}</span></div><span class="preview-toggle" aria-hidden="true"></span></div>
-  <div class="mock-meal">{t.meal}</div>
-  <div class="fast-tabs" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="8"/><path d="M12 8v5l3 2M9 2h6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 4h12v17H6zM9 9h6M9 13h6M9 17h4"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></div>
- </div>
-</div>
-<div class="floating-note"><span class="note-check" aria-hidden="true">✓</span><div><strong>{t.note}</strong><span>Simple Fasting Timer</span></div></div>
-<figcaption>{t.preview}</figcaption>
+<figure class="preview-scene actual-preview">
+ <div class="orbital orbital-one" aria-hidden="true"></div><div class="orbital orbital-two" aria-hidden="true"></div>
+ <div class="phone screenshot-phone" dir="ltr"><img src="/screenshots/timer.png" alt={t[1]} width="876" height="1800" fetchpriority="high"/></div>
+ <figcaption>{t[0]}</figcaption>
 </figure>
 
