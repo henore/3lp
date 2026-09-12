@@ -1,0 +1,15 @@
+---
+import type {Messages} from '../../../../packages/i18n/messages';
+import type {Locale} from '../../../../packages/i18n/locales';
+import {cbtiScreenCaption} from '../../../../packages/i18n/cbti-screens';
+interface Props {t:Messages;locale:Locale;}
+const {t,locale}=Astro.props;
+const screens=[{name:'history',title:'History',description:t.diaryBody},{name:'stats',title:'Stats',description:t.patternsBody}];
+---
+<div class="cbti-gallery">
+<h3>{t.patterns}</h3><p class="cbti-screen-note">{cbtiScreenCaption[locale]}</p>
+<div class="cbti-screen-grid">
+{screens.map(s=><figure class="cbti-screen-card"><a class="cbti-screen-image" href={'/screenshots/'+s.name+'.jpg'}><img src={'/screenshots/'+s.name+'.jpg'} alt={s.title+' — '+s.description} width="720" height="1560" loading="lazy" decoding="async"/></a><figcaption><strong lang="en">{s.title}</strong><p>{s.description}</p></figcaption></figure>)}
+</div>
+</div>
+

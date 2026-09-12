@@ -4,7 +4,9 @@ import {app} from '../../../../packages/config/app';
 import {messages} from '../../../../packages/i18n/messages';
 import type {Locale} from '../../../../packages/i18n/locales';
 import SleepPreview from './SleepPreview.astro';
+import ScreenshotGallery from './ScreenshotGallery.astro';
+import theme from './screens.css?inline';
 interface Props {locale:Locale;}
-const {locale}=Astro.props;const t=messages[locale];
+const {locale}=Astro.props;const t={...messages[locale],notice:''};
 ---
-<LandingPage app={app} t={t} locale={locale}><SleepPreview slot="preview" t={t} locale={locale}/></LandingPage>
+<LandingPage theme={theme} app={app} t={t} locale={locale}><SleepPreview slot="preview" t={t} locale={locale}/><ScreenshotGallery slot="feature-detail" t={t} locale={locale}/></LandingPage>

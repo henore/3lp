@@ -1,24 +1,13 @@
 ---
 import type {Messages} from '../../../../packages/i18n/messages';
-interface Props{t:Messages;locale:string;}
+import type {Locale} from '../../../../packages/i18n/locales';
+import {cbtiScreenCaption} from '../../../../packages/i18n/cbti-screens';
+interface Props{t:Messages;locale:Locale;}
 const {t,locale}=Astro.props;
-const hours=new Intl.NumberFormat(locale,{style:'unit',unit:'hour',unitDisplay:'short'}).format(7);
-const minutes=new Intl.NumberFormat(locale,{style:'unit',unit:'minute',unitDisplay:'short'}).format(15);
 ---
-<figure class="preview-scene">
+<figure class="preview-scene cbti-preview">
 <div class="orbital orbital-one" aria-hidden="true"></div><div class="orbital orbital-two" aria-hidden="true"></div>
-<div class="phone" dir="ltr">
- <div class="phone-top" aria-hidden="true"><span>9:41</span><span class="phone-island"></span><span>▰</span></div>
- <div class="phone-content" dir={locale==='ar'?'rtl':'ltr'}>
- <div class="app-brand"><span aria-hidden="true">☾</span> Simple CBT-I</div>
- <p class="phone-kicker">{t.lastNight}</p>
- <h3>{t.diary}</h3>
- <div class="sleep-card"><span>{t.duration}</span><strong>{hours} <small>{minutes}</small></strong><div class="sleep-track" aria-hidden="true"><i></i></div><div class="sleep-times"><span>23:30</span><span>07:00</span></div></div>
- <div class="week-card"><h4>{t.week}</h4><div class="bars" aria-hidden="true">{[48,65,56,77,65,82,74].map((n,i)=><div><span style={'height:'+n+'px'}></span><small>{new Intl.DateTimeFormat(locale,{weekday:'narrow',timeZone:'UTC'}).format(new Date(Date.UTC(2026,8,7+i)))}</small></div>)}</div></div>
- <div class="phone-bottom"><span aria-hidden="true">▤</span><span>{t.diary}</span><span aria-hidden="true">⌁</span></div>
- </div>
-</div>
-<div class="floating-note"><span class="note-check" aria-hidden="true">✓</span><div><strong>{t.note}</strong><span>Simple CBT-I</span></div></div>
-<figcaption>{t.preview}</figcaption>
+<div class="phone cbti-screen-phone" dir="ltr"><img src="/screenshots/main.jpg" alt={t.diary+' — Daily Insight'} width="720" height="1560" fetchpriority="high"/></div>
+<figcaption>{cbtiScreenCaption[locale]}</figcaption>
 </figure>
 

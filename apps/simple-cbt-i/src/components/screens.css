@@ -1,0 +1,17 @@
+
+[data-brand="simple-cbt-i"] .cbti-screen-phone{padding:0;border:6px solid #383446;border-radius:28px;overflow:hidden;min-height:0;width:270px;background:#efecf3;box-shadow:18px 28px 55px #34304b24,0 0 0 1px #9d97ab}
+.cbti-screen-phone img{display:block;width:100%;height:auto}
+.cbti-preview{min-height:685px;padding-bottom:85px}
+.cbti-preview figcaption{font-size:.8125rem;line-height:1.65;max-width:360px;padding-inline:10px}
+.cbti-gallery{margin-top:56px;border-top:1px solid var(--line);padding-top:40px}
+.cbti-gallery h3{font-size:1.5rem}
+.cbti-screen-note{font-size:.875rem;margin-top:12px}
+.cbti-screen-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;max-width:800px;margin:30px auto 0}
+.cbti-screen-card{min-width:0}
+.cbti-screen-image{display:block;max-width:290px;margin-inline:auto;border:5px solid #d4cedf;border-radius:23px;overflow:hidden;background:#efecf3;box-shadow:0 12px 30px #37304412}
+.cbti-screen-image img{display:block;width:100%;height:auto}
+.cbti-screen-card figcaption{position:static;transform:none;max-width:310px;margin:20px auto 0;text-align:start;line-height:1.8}
+.cbti-screen-card figcaption strong{font-size:1.1rem;color:var(--ink)}
+.cbti-screen-card figcaption p{font-size:.9375rem;margin-top:6px}
+@media(max-width:760px){.cbti-screen-grid{grid-template-columns:1fr;gap:36px}.cbti-gallery{margin-top:36px}}
+
