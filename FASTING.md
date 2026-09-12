@@ -4,7 +4,7 @@
 
 ## 固有の設定
 
-- `packages/config/fasting.ts`: 名前、ブランドカラー、アイコン、Google Play、テスターグループ
+- `packages/config/fasting.ts`: 名前、ブランドカラー、アイコン、Google Play
 - `packages/i18n/fasting.ts`: 16言語の製品コピー。共通のナビゲーション等は既存辞書を再利用
 - `apps/simple-fasting-timer/src/styles/theme.css`: チャコールとアンバーのテーマ。既存CBT-Iに影響しないブランド固有スタイル
 - `apps/simple-fasting-timer/src/components/TimerPreview.astro`: ユーザー提供の実タイマー画面
@@ -30,9 +30,7 @@ Fastingの出力は `build/`、CBT-Iは `dist/`。相互に出力を削除しな
 - 基本タイマー・通常のゴール通知は無料
 - 買い切りPro: カスタムゴール、全履歴・統計、最大3件のゴール前リマインダー、Strong Alert
 - 広告なし
-- Android版はクローズドテスト中
-- 参加条件: Google Playで利用するアカウントで `fast-tester@googlegroups.com` に参加
-- [テスターグループ](https://groups.google.com/g/fast-tester)
+- Google Playへ直接案内（テスター募集・参加条件は撤去済み）
 - [Google Play](https://play.google.com/store/apps/details?id=com.ohesoft.fast)
 
 参照内で旧価格と新価格が混在していたため、金額は固定表示せずアプリ内価格へ案内。未公開のiOS版の配布リンクは掲載しない。通知の到達保証や減量効果、時間ごとの身体変化は断定しない。
@@ -47,5 +45,7 @@ Fastingの出力は `build/`、CBT-Iは `dist/`。相互に出力を削除しな
 
 ## 未検証の範囲
 
-テスターグループへの実際の加入や、資格が必要なストアからのインストールは実行していない。ストアURLはユーザー提供値を採用。翻訳は初稿のため、一般公開前の各言語校閲を推奨する。
+ストアからの実インストールは実行していない。ストアURLはユーザー提供値を採用。翻訳は初稿のため、一般公開前の各言語校閲を推奨する。
 
+
+Google PlayバッジはGoogle Partner Marketing Hubの公式素材を無加工で16言語分保存。出典: https://partnermarketinghub.withgoogle.com/brands/google-play/google-play/lockups-icons-badges/?folder=86718

@@ -1,8 +1,9 @@
 ---
 import type {Messages} from '../i18n/messages';
+import GooglePlayBadge from './GooglePlayBadge.astro';
 import type {AppConfig} from '../config/app';
-interface Props {t:Messages;stores:AppConfig['stores'];name:string;joinUrl?:string;joinLabel?:string;notice?:string;}
-const {t,stores,name,joinUrl,joinLabel,notice}=Astro.props;
+interface Props {googleBadge?:boolean;locale?:string;t:Messages;stores:AppConfig['stores'];name:string;joinUrl?:string;joinLabel?:string;notice?:string;}
+const {googleBadge=false,locale="en",t,stores,name,joinUrl,joinLabel,notice}=Astro.props;
 ---
 <section id="download" class="download wrap"><div><span class="eyebrow">{name.toUpperCase()}</span><h2>{t.downloadTitle}</h2><p>{t.downloadBody}</p>{notice&&<p class="test-note">{notice}</p>}</div>
-<div class="store-area">{joinUrl&&<a class="button join-link" href={joinUrl}>{joinLabel}<span aria-hidden="true">↗</span></a>}{stores.apple&&<a class="store-link" href={stores.apple}>App Store <span aria-hidden="true">↗</span></a>}{stores.google&&<a class="store-link" href={stores.google}>{joinUrl?'② ':''}Google Play <span aria-hidden="true">↗</span></a>}{!stores.apple&&!stores.google&&<p class="pending">{t.unavailable}</p>}</div></section>
+<div class="store-area">{joinUrl&&<a class="button join-link" href={joinUrl}>{joinLabel}<span aria-hidden="true">↗</span></a>}{stores.apple&&<a class="store-link" href={stores.apple}>App Store <span aria-hidden="true">↗</span></a>}{stores.google&&(googleBadge?<GooglePlayBadge url={stores.google} locale={locale} label={t.cta}/>:<a class="store-link" href={stores.google}>{joinUrl?'② ':''}Google Play <span aria-hidden="true">↗</span></a>)}{!stores.apple&&!stores.google&&<p class="pending">{t.unavailable}</p>}</div></section>

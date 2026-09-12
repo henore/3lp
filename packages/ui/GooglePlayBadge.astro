@@ -1,0 +1,6 @@
+---
+interface Props {url:string;locale:string;label:string;}
+const {url,locale,label}=Astro.props;
+---
+<a class="google-play-badge" href={url} aria-label={label+' — Google Play'}><img src={'/badges/'+locale.toLowerCase()+'.svg'} alt="Google Play" width="180" height="54"/></a>
+<style>.google-play-badge{display:inline-block;width:200px;max-width:100%;padding:10px;line-height:0;border-radius:8px;flex-shrink:0}.google-play-badge img{display:block;width:100%;height:auto}.google-play-badge:focus-visible{outline:3px solid #a14d08;outline-offset:3px}</style>

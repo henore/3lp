@@ -40,8 +40,8 @@ assert(page.url().endsWith('/ar/'),'locale navigation');
 assert.equal(await page.locator('html').getAttribute('dir'),'rtl');
 await page.locator('.language summary').focus();await page.keyboard.press('Enter');await page.keyboard.press('Escape');
 assert.equal(await page.locator('.language').getAttribute('open'),null,'language escape');
-await page.locator('.hero-actions a[href="#download"]').click();
-assert(page.url().endsWith('#download'),'CTA anchor');
+const primary=page.locator('.hero-actions a').first();
+if(await primary.getAttribute('href')==='#download'){await primary.click();assert(page.url().endsWith('#download'),'CTA anchor');}else{assert.equal(await primary.getAttribute('href'),'https://play.google.com/store/apps/details?id=com.ohesoft.fast');assert.equal(await page.locator('.google-play-badge').count(),2);assert.equal(await page.locator('.join-link,.review-note,.test-note').count(),0);assert(await page.locator('.google-play-badge img').evaluateAll(imgs=>imgs.every(im=>im.complete&&im.naturalWidth>0)));}
 await page.setViewportSize({width:375,height:900});
 await page.goto(origin+'/ja/');
 await page.addStyleTag({content:'html{font-size:200%}'});
