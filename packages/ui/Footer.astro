@@ -1,7 +1,7 @@
 ---
 import type {Messages} from '../i18n/messages';
+import {supportUrl, contactLabels} from '../config/support';
 interface Props {t:Messages;locale:string;name:string;icon?:string;}
 const {t,locale,name,icon}=Astro.props;
 ---
-<footer class="wrap footer"><div><a class="brand" href={'/'+locale+'/'}>{icon ? <img class="brand-image" src={icon} alt="" width="39" height="39"/> : <span class="brand-icon" aria-hidden="true">☾</span>}{name}</a><p>© {new Date().getFullYear()} {name}</p></div><nav aria-label={t.faq}><a href="#features">{t.features}</a><a href="#faq">{t.faq}</a><a href="#download">{t.cta}</a></nav></footer>
-
+<footer class="wrap footer"><div><a class="brand" href={'/'+locale+'/'}>{icon ? <img class="brand-image" src={icon} alt="" width="39" height="39"/> : <span class="brand-icon" aria-hidden="true">☾</span>}{name}</a><p>© {new Date().getFullYear()} {name}</p></div><nav aria-label={t.faq}><a href="#features">{t.features}</a><a href="#faq">{t.faq}</a><a href="#download">{t.cta}</a><a href={supportUrl}>{contactLabels[locale] ?? contactLabels.en}</a></nav></footer>
