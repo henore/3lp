@@ -1,23 +1,30 @@
 ---
 import {locales,localeCodes,type Locale} from '../i18n/locales';
-interface Props {name:string;title:string;description:string;locale:Locale;site:URL|undefined;}
-const {name,title,description,locale,site}=Astro.props;
+interface Props {name:string;title:string;description:string;locale:Locale;site:URL|undefined;page?:string;}
+const {name,title,description,locale,site,page=""}=Astro.props;
 if(!site) throw new Error('Astro site origin is required');
 const origin=site;
-const canonical = new URL('/'+locale+'/',origin).href;
+const canonical = new URL('/'+locale+'/'+page,origin).href;
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{localeCodes.map(code=><link rel="alternate" hreflang={code} href={new URL('/'+code+'/',origin).href}/>)}
-<link rel="alternate" hreflang="x-default" href={new URL('/ja/',origin).href}/>
+{localeCodes.map(code=><link rel="alternate" hreflang={code} href={new URL('/'+code+'/'+page,origin).href}/>)}
+<link rel="alternate" hreflang="x-default" href={new URL('/ja/'+page,origin).href}/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content={name}/>
 <meta property="og:title" content={title}/>
 <meta property="og:description" content={description}/>
 <meta property="og:url" content={canonical}/>
 <meta property="og:locale" content={locale.replace('-','_')}/>
-<meta name="twitter:card" content="summary"/>
+<meta property="og:image" content={new URL('/og.png',origin).href}/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content={name}/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content={new URL('/og.png',origin).href}/>
+<meta name="twitter:image:alt" content={name}/>
 <meta name="twitter:title" content={title}/>
 <meta name="twitter:description" content={description}/>
 <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name,url:canonical,inLanguage:locale,description}).replace(/</g,'\\u003c')}/>

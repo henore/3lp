@@ -1,0 +1,8 @@
+---
+import SupportPage from '../../../../../packages/ui/SupportPage.astro';
+import {localeCodes} from '../../../../../packages/i18n/locales';
+import {app} from '../../../../../packages/config/app';
+export function getStaticPaths(){return localeCodes.map(locale=>({params:{locale},props:{locale}}));}
+const {locale}=Astro.props;
+---
+<SupportPage locale={locale} app={app}/>

@@ -1,6 +1,10 @@
-# Simple CBT-I + Simple Fasting Timer / Shared app websites
+# Simple CBT-I / Simple Fasting Timer / Smart Live Assist
 
 Astroで作成した16言語のサイトと、3アプリで再利用する共通基盤。
+
+EC2 Ubuntu / Nginxへの公開・HTTPS・サイト別ログ・画像差し替えは [deploy/README.md](deploy/README.md) を参照。本番ドメイン、Privacy/Terms、Google Play URLは [deploy/sites.json](deploy/sites.json) で管理する。公開前の未設定項目は `node scripts/production.mjs check` で確認する。
+
+Smart Live Assistの開発は `npm run dev:sla`、ビルドは `npm run build:sla`、出力は `build-sla/`。各アプリに16言語のLPとSupportページを生成する。
 
 ```sh
 npm ci

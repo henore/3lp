@@ -1,0 +1,32 @@
+---
+import Seo from './Seo.astro';
+import {supportUrl, contactLabels} from '../config/support';
+import {legalLinks} from '../config/legal';
+import {direction, locales, type Locale} from '../i18n/locales';
+import type {AppConfig} from '../config/app';
+import styles from './styles.css?inline';
+interface Props {locale:Locale;app:AppConfig;}
+const {locale,app}=Astro.props;
+const copy:Record<Locale,string>={
+ ja:'お問い合わせフォームで対象アプリ、返信先メールアドレス、お問い合わせ内容をご入力ください。',
+ en:'Select your app and enter your reply email address and message in the contact form.',
+ 'zh-CN':'请在联系表单中选择应用，并填写回复邮箱和咨询内容。',
+ 'zh-TW':'請在聯絡表單中選擇應用程式，並填寫回覆信箱及詢問內容。',
+ ko:'문의 양식에서 앱을 선택하고 답변받을 이메일 주소와 문의 내용을 입력해 주세요.',
+ de:'Wählen Sie im Kontaktformular Ihre App aus und geben Sie Ihre E-Mail-Adresse und Nachricht ein.',
+ fr:'Sélectionnez votre application et indiquez votre adresse e-mail et votre message dans le formulaire.',
+ es:'Selecciona tu aplicación e introduce tu correo electrónico y mensaje en el formulario de contacto.',
+ it:'Seleziona la tua app e inserisci il tuo indirizzo email e il messaggio nel modulo di contatto.',
+ 'pt-BR':'Selecione seu aplicativo e informe seu e-mail e sua mensagem no formulário de contato.',
+ nl:'Selecteer je app en vul je e-mailadres en bericht in het contactformulier in.',
+ sv:'Välj din app och ange din e-postadress och ditt meddelande i kontaktformuläret.',
+ pl:'Wybierz aplikację i wpisz swój adres e-mail oraz wiadomość w formularzu kontaktowym.',
+ ru:'Выберите приложение и укажите адрес электронной почты для ответа и сообщение в контактной форме.',
+ ar:'اختر تطبيقك وأدخل بريدك الإلكتروني للرد ورسالتك في نموذج الاتصال.',
+ hi:'संपर्क फ़ॉर्म में अपना ऐप चुनें और उत्तर पाने के लिए ईमेल पता तथा संदेश दर्ज करें।',
+};
+const title=contactLabels[locale];
+---
+<!doctype html><html lang={locale} dir={direction(locale)}>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="icon" href="/favicon.png"/><Seo name={app.name} title={title+' — '+app.name} description={copy[locale]} locale={locale} site={Astro.site} page="support/"/><style is:inline set:html={styles}/></head>
+<body style={'--accent:'+app.accent}><main class="wrap section" style="max-width:800px;min-height:80vh"><a class="brand" href={'/'+locale+'/'}>{app.name}</a><h1>{title}</h1><p>{copy[locale]}</p><p><a class="button" href={supportUrl}>{title} ↗</a></p><p lang="en">Google Forms · 日本語 / English</p><nav aria-label="Language">{Object.entries(locales).map(([code,label])=><a style="display:inline-block;margin:8px" href={'/'+code+'/support/'} lang={code} hreflang={code} aria-current={code===locale?'page':undefined}>{label}</a>)}</nav><p>{legalLinks.privacy&&<a href={legalLinks.privacy}>Privacy</a>} {' '} {legalLinks.terms&&<a href={legalLinks.terms}>Terms</a>}</p></main></body></html>

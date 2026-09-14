@@ -1,0 +1,5 @@
+[
+  {"key":"cbti","app":"simple-cbt-i","domain":"simple-cbt-i.biz","output":"dist","build":"build","privacyUrl":null,"termsUrl":null,"playStoreUrl":null},
+  {"key":"fast","app":"simple-fasting-timer","domain":"simple-fast.biz","output":"build","build":"build:fast","privacyUrl":null,"termsUrl":null,"playStoreUrl":"https://play.google.com/store/apps/details?id=com.ohesoft.fast"},
+  {"key":"assist","app":"smart-live-assist","domain":"smart-live-assist.biz","output":"build-sla","build":"build:sla","privacyUrl":null,"termsUrl":null,"playStoreUrl":null}
+]

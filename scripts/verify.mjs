@@ -20,6 +20,6 @@ for(const locale of locales){
  }
 }
 const xml=await readFile(path.join(root,'sitemap.xml'),'utf8');
-assert.equal((xml.match(/<loc>/g)||[]).length,16);
+assert.equal((xml.match(/<loc>/g)||[]).length,32);
 assert((await readFile(path.join(root,'robots.txt'),'utf8')).includes('/sitemap.xml'));
 console.log('PASS: 16 locales, language/direction, unique h1, alternates, metadata, anchors, local assets, sitemap, robots.');
