@@ -4,7 +4,7 @@ import type {Locale} from '../../../../packages/i18n/locales';
 import {cbtiScreenCaption} from '../../../../packages/i18n/cbti-screens';
 interface Props {t:Messages;locale:Locale;}
 const {t,locale}=Astro.props;
-const screens=[{name:'history',title:'History',description:t.diaryBody},{name:'stats',title:'Stats',description:t.patternsBody}];
+const screens=[{name:'history',title:'History',description:t.diaryBody},{name:'stats',title:'Stats — Weekly averages',description:t.patternsBody},{name:'stats-trend',title:'Stats — Sleep efficiency trend',description:t.patternsBody}];
 ---
 <div class="cbti-gallery">
 <h3>{t.patterns}</h3><p class="cbti-screen-note">{cbtiScreenCaption[locale]}</p>

@@ -6,7 +6,7 @@
 .cbti-gallery{margin-top:56px;border-top:1px solid var(--line);padding-top:40px}
 .cbti-gallery h3{font-size:1.5rem}
 .cbti-screen-note{font-size:.875rem;margin-top:12px}
-.cbti-screen-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;max-width:800px;margin:30px auto 0}
+.cbti-screen-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1100px;margin:30px auto 0}
 .cbti-screen-card{min-width:0}
 .cbti-screen-image{display:block;max-width:290px;margin-inline:auto;border:5px solid #d4cedf;border-radius:23px;overflow:hidden;background:#efecf3;box-shadow:0 12px 30px #37304412}
 .cbti-screen-image img{display:block;width:100%;height:auto}

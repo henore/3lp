@@ -102,7 +102,7 @@ done
 
 | アプリ内 public/screenshots/ | ファイル | 現在の寸法 |
 |---|---|---|
-| simple-cbt-i | main.jpg / history.jpg / stats.jpg | 720×1560 |
+| simple-cbt-i | main.jpg / history.jpg / stats.jpg / stats-trend.jpg | 720×1560 |
 | simple-fasting-timer | timer.png | 876×1800 |
 | simple-fasting-timer | history.jpg / stats.jpg / detail.jpg | 720×1560 |
 | smart-live-assist | reader.jpg / auto-tap.jpg / guide.jpg / upgrade.jpg | 892×1834 |
