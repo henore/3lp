@@ -13,7 +13,7 @@ const screens=[{name:'history',title:'History',description:t.diaryBody},{name:'s
 <div class="cbti-gallery">
 <h3>{t.patterns}</h3><p class="cbti-screen-note">{cbtiScreenCaption[locale]}</p>
 <div class="cbti-screen-grid">
-{screens.map(s=><figure class="cbti-screen-card"><a class="cbti-screen-image" href={'/screenshots/'+ssLocale+'/'+s.name+'.png'}><img src={'/screenshots/'+ssLocale+'/'+s.name+'.png'} alt={s.title+' — '+s.description} width="720" height="1560" loading="lazy" decoding="async"/></a><figcaption><strong lang="en">{s.title}</strong><p>{s.description}</p></figcaption></figure>)}
+{screens.map(s=><figure class="cbti-screen-card"><a class="cbti-screen-image" href={'/screenshots/'+ssLocale+'/'+s.name+'.jpg'}><img src={'/screenshots/'+ssLocale+'/'+s.name+'.jpg'} alt={s.title+' — '+s.description} width="720" height="1560" loading="lazy" decoding="async"/></a><figcaption><strong lang="en">{s.title}</strong><p>{s.description}</p></figcaption></figure>)}
 </div>
 </div>
 

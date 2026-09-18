@@ -12,7 +12,7 @@ const ssLocale=fs.existsSync('public/screenshots/'+locale) ? locale : 'en';
  <p class="screen-disclosure">{t[0]}</p>
  <div class="screen-grid">
   {['history','stats','detail'].map((name,i)=><figure class="screen-card">
-   <a class="screen-image" href={'/screenshots/'+ssLocale+'/'+name+'.png'}><img src={'/screenshots/'+ssLocale+'/'+name+'.png'} alt={t[i+3]} width="720" height="1560" loading="lazy" decoding="async"/></a>
+   <a class="screen-image" href={'/screenshots/'+ssLocale+'/'+name+'.jpg'}><img src={'/screenshots/'+ssLocale+'/'+name+'.jpg'} alt={t[i+3]} width="720" height="1560" loading="lazy" decoding="async"/></a>
    <figcaption>{t[i+3]}</figcaption>
   </figure>)}
  </div>
