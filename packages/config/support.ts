@@ -5,4 +5,5 @@ export const contactLabels: Record<string, string> = {
   ko: '문의하기', de: 'Kontakt', fr: 'Contact', es: 'Contacto', it: 'Contatti',
   'pt-BR': 'Contato', nl: 'Contact', sv: 'Kontakta oss', pl: 'Kontakt',
   ru: 'Связаться с нами', ar: 'اتصل بنا', hi: 'संपर्क करें',
+  th: 'ติดต่อเรา', vi: 'Liên hệ', id: 'Hubungi Kami',
 };

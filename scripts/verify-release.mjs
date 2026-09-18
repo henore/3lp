@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 const root=path.resolve(process.argv[2]||'dist');
 const origin=process.argv[3];
-const locales=['ja','en','zh-CN','zh-TW','ko','de','fr','es','it','pt-BR','nl','sv','pl','ru','ar','hi'];
+const locales=['ja','en','zh-CN','zh-TW','ko','de','fr','es','it','pt-BR','nl','sv','pl','ru','ar','hi','th','vi','id'];
 const urls=[];
 for(const locale of locales)for(const page of ['','support/']){
  const html=await readFile(path.join(root,locale,page,'index.html'),'utf8');
@@ -31,7 +31,7 @@ for(const locale of locales)for(const page of ['','support/']){
  }
 }
 const sitemap=await readFile(path.join(root,'sitemap.xml'),'utf8');
-assert.equal((sitemap.match(/<loc>/g)||[]).length,32);
+assert.equal((sitemap.match(/<loc>/g)||[]).length,38);
 for(const url of urls)assert(sitemap.includes('<loc>'+url+'</loc>'));
 const robots=await readFile(path.join(root,'robots.txt'),'utf8');
 assert(robots.includes('Sitemap: '+new URL('/sitemap.xml',urls[0]).href));
@@ -39,4 +39,4 @@ const og=await readFile(path.join(root,'og.png'));
 assert.equal(og.subarray(1,4).toString(),'PNG');assert.equal(og.readUInt32BE(16),1200);assert.equal(og.readUInt32BE(20),630);
 assert((await stat(path.join(root,'favicon.png'))).size>0);
 assert((await readFile(path.join(root,'404.html'),'utf8')).includes('content="noindex"'));
-console.log('PASS: 32 routes, exact canonical/hreflang/sitemap, OGP PNG, favicon, support links, 404.');
+console.log('PASS: 38 routes, exact canonical/hreflang/sitemap, OGP PNG, favicon, support links, 404.');

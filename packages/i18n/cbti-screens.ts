@@ -15,5 +15,8 @@ sv:'Verkliga appskärmar. Språk och innehåll vid skärmbildstillfället.',
 pl:'Rzeczywiste ekrany aplikacji. Język i treść z chwili wykonania zrzutu.',
 ru:'Реальные экраны приложения. Язык и содержимое на момент снимка.',
 ar:'شاشات فعلية للتطبيق. اللغة والمحتوى كما ظهرا وقت التقاط الصور.',
-hi:'ऐप की वास्तविक स्क्रीन। भाषा और सामग्री स्क्रीनशॉट लेते समय की हैं।'
+hi:'ऐप की वास्तविक स्क्रीन। भाषा और सामग्री स्क्रीनशॉट लेते समय की हैं।',
+th:'หน้าจอจริงของแอป ภาษาและเนื้อหาแสดงตามที่บันทึกไว้',
+vi:'Giao diện thực tế của ứng dụng. Ngôn ngữ và nội dung hiển thị tại thời điểm chụp.',
+id:'Tampilan asli aplikasi. Bahasa dan konten ditampilkan sesuai saat pengambilan gambar.'
 };
