@@ -16,8 +16,10 @@ for(const locale of locales)for(const page of ['','support/']){
  assert(/name="description" content="[^"]+"/.test(html));
  assert(html.includes('lang="'+locale+'"'));
  assert(html.includes('dir="'+(locale==='ar'?'rtl':'ltr')+'"'));
+ const xDefaultHref=html.match(/hreflang="x-default" href="([^"]+)"/)?.[1];
+ const xDefaultLocale=xDefaultHref?new URL(xDefaultHref).pathname.split('/')[1]:'en';
  for(const lang of [...locales,'x-default']){
-  const target=url.origin+'/'+(lang==='x-default'?'ja':lang)+'/'+page;
+  const target=url.origin+'/'+(lang==='x-default'?xDefaultLocale:lang)+'/'+page;
   assert(html.includes('hreflang="'+lang+'" href="'+target+'"'),'hreflang '+target);
  }
  assert(html.includes('property="og:url" content="'+canonical+'"'));
