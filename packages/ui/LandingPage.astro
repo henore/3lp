@@ -11,12 +11,12 @@ import type {Messages} from '../i18n/messages';
 import {direction,type Locale} from '../i18n/locales';
 
 import styles from './styles.css?inline';
-interface Props {locale:Locale;app:AppConfig;t:Messages;theme?:string;joinUrl?:string;joinLabel?:string;storeNotice?:string;featureIcons?:Array<"diary"|"chart"|"book"|"timer"|"bell">;}
-const {locale,app,t,theme="",joinUrl,joinLabel,storeNotice,featureIcons=["diary","chart","book"]}=Astro.props;
+interface Props {locale:Locale;app:AppConfig;t:Messages;theme?:string;joinUrl?:string;joinLabel?:string;storeNotice?:string;featureIcons?:Array<"diary"|"chart"|"book"|"timer"|"bell">;defaultLocale?:Locale;}
+const {locale,app,t,theme="",joinUrl,joinLabel,storeNotice,featureIcons=["diary","chart","book"],defaultLocale}=Astro.props;
 ---
 <!doctype html>
 <html lang={locale} dir={direction(locale)}>
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content={app.accent}/><link rel="icon" href="/favicon.png"/><Seo name={app.name} title={app.name+' — '+t.title} description={t.intro} locale={locale} site={Astro.site}/><style is:inline set:html={styles}/><style is:inline set:html={theme}/></head>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content={app.accent}/><link rel="icon" href="/favicon.png"/><Seo name={app.name} title={app.name+' — '+t.title} description={t.intro} locale={locale} site={Astro.site} defaultLocale={defaultLocale}/><style is:inline set:html={styles}/><style is:inline set:html={theme}/></head>
 <body data-brand={app.slug} style={'--accent:'+app.accent}>
  {t.notice && <div class="review-note">{t.notice}</div>}
  <div class="wrap"><Header locale={locale} t={t} name={app.name} icon={app.icon}/></div>

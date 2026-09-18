@@ -1,7 +1,7 @@
 ---
 import {locales,localeCodes,type Locale} from '../i18n/locales';
-interface Props {name:string;title:string;description:string;locale:Locale;site:URL|undefined;page?:string;}
-const {name,title,description,locale,site,page=""}=Astro.props;
+interface Props {name:string;title:string;description:string;locale:Locale;site:URL|undefined;page?:string;defaultLocale?:Locale;}
+const {name,title,description,locale,site,page="",defaultLocale="ja"}=Astro.props;
 if(!site) throw new Error('Astro site origin is required');
 const origin=site;
 const canonical = new URL('/'+locale+'/'+page,origin).href;
@@ -10,7 +10,7 @@ const canonical = new URL('/'+locale+'/'+page,origin).href;
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 {localeCodes.map(code=><link rel="alternate" hreflang={code} href={new URL('/'+code+'/'+page,origin).href}/>)}
-<link rel="alternate" hreflang="x-default" href={new URL('/ja/'+page,origin).href}/>
+<link rel="alternate" hreflang="x-default" href={new URL('/'+defaultLocale+'/'+page,origin).href}/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content={name}/>
 <meta property="og:title" content={title}/>

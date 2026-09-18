@@ -9,5 +9,5 @@ import theme from './theme.css?inline';
 interface Props {locale:Locale;}
 const {locale}=Astro.props;const t=slaMessages[locale];
 ---
-<LandingPage app={slaApp} t={t} locale={locale} theme={theme} featureIcons={['book','chart','timer']}><Preview slot="preview" t={t}/><Gallery slot="feature-detail" t={t}/></LandingPage>
+<LandingPage app={slaApp} t={t} locale={locale} theme={theme} featureIcons={['book','chart','timer']}><Preview slot="preview" t={t} locale={locale}/><Gallery slot="feature-detail" t={t} locale={locale}/></LandingPage>
 

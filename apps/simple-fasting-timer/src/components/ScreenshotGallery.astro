@@ -1,17 +1,19 @@
 ---
+import fs from 'node:fs';
 import {screenCopy} from '../../../../packages/i18n/fasting-screens';
 import type {Locale} from '../../../../packages/i18n/locales';
 interface Props {locale:Locale;}
-const t=screenCopy[Astro.props.locale];
+const {locale}=Astro.props;
+const t=screenCopy[locale];
+const ssLocale=fs.existsSync('public/screenshots/'+locale) ? locale : 'en';
 ---
 <div class="screen-gallery">
  <h3>{t[2]}</h3>
  <p class="screen-disclosure">{t[0]}</p>
  <div class="screen-grid">
   {['history','stats','detail'].map((name,i)=><figure class="screen-card">
-   <a class="screen-image" href={'/screenshots/'+name+'.jpg'}><img src={'/screenshots/'+name+'.jpg'} alt={t[i+3]} width="720" height="1560" loading="lazy" decoding="async"/></a>
+   <a class="screen-image" href={'/screenshots/'+ssLocale+'/'+name+'.png'}><img src={'/screenshots/'+ssLocale+'/'+name+'.png'} alt={t[i+3]} width="720" height="1560" loading="lazy" decoding="async"/></a>
    <figcaption>{t[i+3]}</figcaption>
   </figure>)}
  </div>
 </div>
-
