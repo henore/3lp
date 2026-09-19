@@ -6,7 +6,7 @@ import type {Locale} from '../../../../packages/i18n/locales';
 import {cbtiScreenCaption} from '../../../../packages/i18n/cbti-screens';
 interface Props {t:CbtiMessages;locale:Locale;}
 const {t,locale}=Astro.props;
-const ssDir=fileURLToPath(new URL('../../public/screenshots',import.meta.url));
+const ssDir=fileURLToPath(new URL('../../apps/simple-cbt-i/public/screenshots',import.meta.url));
 const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
 const screens=[{name:'history',title:'History',description:t.diaryBody},{name:'stats',title:'Stats — Weekly averages',description:t.patternsBody},{name:'stats-trend',title:'Stats — Sleep efficiency trend',description:t.patternsBody}];
 ---

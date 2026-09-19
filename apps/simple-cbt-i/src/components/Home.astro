@@ -16,7 +16,7 @@ import theme from './screens.css?inline';
 interface Props {locale:Locale;}
 const {locale}=Astro.props;
 const t:CbtiMessages={...cbtiMessages[locale],notice:''};
-const ssDir=fileURLToPath(new URL('../../public/screenshots',import.meta.url));
+const ssDir=fileURLToPath(new URL('../../apps/simple-cbt-i/public/screenshots',import.meta.url));
 const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
 const faq:Array<[string,string]>=[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3],[t.q4,t.a4],[t.q5,t.a5]];
 ---
