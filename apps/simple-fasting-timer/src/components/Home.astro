@@ -1,14 +1,184 @@
 ---
-import LandingPage from '../../../../packages/ui/LandingPage.astro';
-import {fastingApp} from '../../../../packages/config/fasting';
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import Header from '../../../../packages/ui/Header.astro';
+import Seo from '../../../../packages/ui/Seo.astro';
+import Footer from '../../../../packages/ui/Footer.astro';
+import GooglePlayBadge from '../../../../packages/ui/GooglePlayBadge.astro';
+import {fastingApp as app} from '../../../../packages/config/fasting';
 import {fastingMessages} from '../../../../packages/i18n/fasting';
-import type {Locale} from '../../../../packages/i18n/locales';
-import TimerPreview from './TimerPreview.astro';
-import ScreenshotGallery from './ScreenshotGallery.astro';
+import {screenCopy} from '../../../../packages/i18n/fasting-screens';
+import {direction,type Locale} from '../../../../packages/i18n/locales';
+import baseStyles from '../../../../packages/ui/styles.css?inline';
 import theme from '../styles/theme.css?inline';
 interface Props {locale:Locale;}
-const {locale}=Astro.props;const t=fastingMessages[locale];
+const {locale}=Astro.props;
+const t=fastingMessages[locale];
+const sc=screenCopy[locale];
+const ssDir=fileURLToPath(new URL('../../public/screenshots',import.meta.url));
+const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
 ---
-<LandingPage locale={locale} app={fastingApp} t={t} theme={theme} featureIcons={['timer','bell','chart']} defaultLocale="en"><TimerPreview slot="preview" locale={locale}/><ScreenshotGallery slot="feature-detail" locale={locale}/></LandingPage>
+<!doctype html>
+<html lang={locale} dir={direction(locale)}>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#0a0a0a"/><link rel="icon" href="/favicon.png"/><Seo name={app.name} title={app.name+' — '+t.title+' '+t.highlight} description={t.intro} locale={locale} site={Astro.site} defaultLocale="en"/><style is:inline set:html={baseStyles}/><style is:inline set:html={theme}/></head>
+<body class="fast-dark" data-brand={app.slug}>
+ <div class="wrap"><Header locale={locale} t={t} name={app.name} icon={app.icon}/></div>
+ <main id="main">
 
+ <!-- Hero -->
+ <section class="fd-hero wrap">
+  <div class="hero-copy">
+   <p class="fd-eyebrow"><span class="fd-eyebrow-dot" aria-hidden="true"></span>{t.eyebrow}</p>
+   <h1>{t.title}<span>{t.highlight}</span></h1>
+   <p class="intro">{t.intro}</p>
+   <div class="hero-actions">
+    {app.googleBadge && app.stores.google ? <GooglePlayBadge url={app.stores.google} locale={locale} label={t.cta}/> : <a class="fd-btn" href="#download">{t.cta}<span aria-hidden="true">↗</span></a>}
+    <a class="fd-text-link" href="#features">{t.secondary}<span aria-hidden="true">↓</span></a>
+   </div>
+   <p class="fd-hero-note"><span aria-hidden="true">✓</span>{t.note}</p>
+  </div>
+  <figure class="fd-hero-phone">
+   <div class="fd-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/timer.jpg'} alt={sc[1]} width="876" height="1800" fetchpriority="high"/></div>
+  </figure>
+ </section>
 
+ <!-- Values -->
+ <section id="features" class="fd-values section wrap">
+  <div class="fd-section-head"><span class="fd-eyebrow">01 / {t.features}</span><h2>{t.sectionTitle}</h2><p>{t.sectionIntro}</p></div>
+  <div class="fd-value-grid">
+   {[
+    {icon:'⏱',title:t.diary,body:t.diaryBody},
+    {icon:'🔔',title:t.patterns,body:t.patternsBody},
+    {icon:'📊',title:t.learn,body:t.learnBody}
+   ].map((v,i)=>(
+    <div class="fd-value-card">
+     <span class="fd-value-num" aria-hidden="true">{'0'+(i+1)}</span>
+     <span class="fd-value-icon" aria-hidden="true">{v.icon}</span>
+     <h3>{v.title}</h3>
+     <p>{v.body}</p>
+    </div>
+   ))}
+  </div>
+ </section>
+
+ <!-- How it works -->
+ <section id="approach" class="fd-approach">
+  <div class="wrap fd-approach-inner">
+   <div>
+    <span class="fd-eyebrow">02 / {t.approach}</span>
+    <h2>{t.approachTitle}</h2>
+    <p>{t.approachBody}</p>
+   </div>
+   <ol class="fd-steps">
+    {[t.step1,t.step2,t.step3].map((step,i)=>(
+     <li>
+      <span class="fd-step-num">{'0'+(i+1)}</span>
+      <span>{step}</span>
+      <span class="fd-step-mark" aria-hidden="true">{['↗','⌁','✧'][i]}</span>
+     </li>
+    ))}
+   </ol>
+  </div>
+ </section>
+
+ <!-- Timer showcase -->
+ <section class="fd-showcase section wrap">
+  <div class="fd-showcase-inner">
+   <figure class="fd-showcase-phone">
+    <div class="fd-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/timer.jpg'} alt={sc[1]} width="876" height="1800" loading="lazy" decoding="async"/></div>
+   </figure>
+   <div class="fd-showcase-copy">
+    <span class="fd-eyebrow">03 / {t.elapsed}</span>
+    <h2>{t.diary}</h2>
+    <p>{t.diaryBody}</p>
+    <ul class="fd-showcase-list">
+     <li><span aria-hidden="true">◷</span>{t.elapsed}</li>
+     <li><span aria-hidden="true">◎</span>{t.goal}</li>
+     <li><span aria-hidden="true">▸</span>{t.remaining}</li>
+    </ul>
+   </div>
+  </div>
+ </section>
+
+ <!-- History & Stats -->
+ <section class="fd-gallery section wrap">
+  <div class="fd-section-head"><span class="fd-eyebrow">04 / Stats</span><h2>{sc[2]}</h2></div>
+  <p class="fd-gallery-note">{sc[0]}</p>
+  <div class="fd-gallery-grid">
+   {['history','stats','detail'].map((name,i)=>(
+    <figure class="fd-gallery-card">
+     <a class="fd-gallery-img" href={'/screenshots/'+ssLocale+'/'+name+'.jpg'}><img src={'/screenshots/'+ssLocale+'/'+name+'.jpg'} alt={sc[i+3]} width="720" height="1560" loading="lazy" decoding="async"/></a>
+     <figcaption>{sc[i+3]}</figcaption>
+    </figure>
+   ))}
+  </div>
+ </section>
+
+ <!-- Privacy -->
+ <section class="fd-privacy section">
+  <div class="wrap fd-privacy-inner">
+   <div class="fd-privacy-copy">
+    <span class="fd-eyebrow">05 / Privacy</span>
+    <h2>{t.privacyTitle}</h2>
+    <p>{t.privacyBody}</p>
+   </div>
+   <ul class="fd-privacy-list">
+    <li><span class="fd-check" aria-hidden="true">✓</span>{t.privacyNoAccount}</li>
+    <li><span class="fd-check" aria-hidden="true">✓</span>{t.privacyNoAds}</li>
+    <li><span class="fd-check" aria-hidden="true">✓</span>{t.privacyLocal}</li>
+   </ul>
+  </div>
+ </section>
+
+ <!-- Pro -->
+ <section class="fd-pro section wrap">
+  <div class="fd-section-head"><span class="fd-eyebrow">06 / Pro</span><h2>{t.proTitle}</h2><p>{t.proBody}</p></div>
+  <div class="fd-plan-grid">
+   <div class="fd-plan-card">
+    <h3>Free</h3>
+    <ul>
+     <li><span aria-hidden="true">✓</span>{t.freeItem1}</li>
+     <li><span aria-hidden="true">✓</span>{t.freeItem2}</li>
+     <li><span aria-hidden="true">✓</span>{t.freeItem3}</li>
+    </ul>
+   </div>
+   <div class="fd-plan-card fd-plan-pro">
+    <div class="fd-pro-badge">{t.proPrice}</div>
+    <h3>Pro</h3>
+    <ul>
+     <li><span aria-hidden="true">✦</span>{t.proItem1}</li>
+     <li><span aria-hidden="true">✦</span>{t.proItem2}</li>
+     <li><span aria-hidden="true">✦</span>{t.proItem3}</li>
+     <li><span aria-hidden="true">✦</span>{t.proItem4}</li>
+    </ul>
+   </div>
+  </div>
+ </section>
+
+ <!-- FAQ -->
+ <section id="faq" class="fd-faq section wrap">
+  <div class="fd-faq-head"><span class="fd-eyebrow">FAQ</span><h2>{t.faqTitle}</h2></div>
+  <div class="fd-questions">
+   {[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3]].map(([q,a])=>(
+    <details>
+     <summary>{q}<span class="fd-plus" aria-hidden="true">+</span></summary>
+     <p>{a}</p>
+    </details>
+   ))}
+  </div>
+ </section>
+
+ <!-- Final CTA -->
+ <section id="download" class="fd-cta section wrap">
+  <div class="fd-cta-box">
+   <div><span class="fd-eyebrow">{app.name.toUpperCase()}</span><h2>{t.downloadTitle}</h2><p>{t.downloadBody}</p></div>
+   <div class="fd-cta-store">
+    {app.stores.google ? (app.googleBadge ? <GooglePlayBadge url={app.stores.google} locale={locale} label={t.cta}/> : <a class="fd-store-link" href={app.stores.google}>Google Play <span aria-hidden="true">↗</span></a>) : <p class="fd-pending">{t.unavailable}</p>}
+   </div>
+  </div>
+ </section>
+
+ </main>
+ <Footer t={t} locale={locale} name={app.name} icon={app.icon}/>
+</body>
+</html>
