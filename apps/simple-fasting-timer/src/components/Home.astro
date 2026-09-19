@@ -15,7 +15,7 @@ interface Props {locale:Locale;}
 const {locale}=Astro.props;
 const t=fastingMessages[locale];
 const sc=screenCopy[locale];
-const ssDir=fileURLToPath(new URL('../../public/screenshots',import.meta.url));
+const ssDir=fileURLToPath(new URL('../../apps/simple-fasting-timer/public/screenshots',import.meta.url));
 const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
 ---
 <!doctype html>
