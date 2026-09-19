@@ -476,6 +476,31 @@ const rows:Record<Locale,string[]>={
     "Siaran berikutnya,\nlebih mudah diikuti.",
     "Distribusi Android sedang disiapkan. Tautan toko resmi akan muncul di sini setelah tersedia.",
     "Tampilan asli dalam bahasa Inggris. Harga dan informasi uji coba sesuai saat pengambilan gambar."
+  ],
+  "tr": [
+    "Canlı sohbet, sesli.",
+    "Diller ötesinde.",
+    "Android'de canlı yorumları okuyun ve çevirin. Yayına odaklanın veya başka bir şey yaparken dinleyin. PC veya OBS gerekmez.",
+    "Yorumları dinleyin",
+    "Kendi dilinizde dinleyin",
+    "IRIAM için Otomatik Dokunma",
+    "Ekrandaki yorumları sese dönüştürün. Ses ve hızı ayarlayın, durdurun veya atlayın.",
+    "16 desteklenen dildeki yorumları seçtiğiniz dile çevirip okutun. Yeniden başlatmadan dil değiştirin.",
+    "Lite, IRIAM Otomatik Dokunma sunar. Normal yorum kontrollerini kullanmaya devam ederken aralık ve sayıyı ayarlayın.",
+    "Tek telefon.\nYayınınıza daha yakın.",
+    "OCR, çeviri ve ses cihazınızda işlenir. Dil verileri ilk gerektiğinde indirilir.",
+    "IRIAM veya REALITY seçin",
+    "Dil ve sesi ayarlayın",
+    "Ekran paylaşımına izin verin ve okumaya başlayın",
+    "Hangi yayın uygulamaları destekleniyor?",
+    "IRIAM ve REALITY için yorum okuma ve çeviri, IRIAM için Otomatik Dokunma desteklenir. Tanıma cihaza, yayın düzenine ve uygulama güncellemelerine bağlıdır.",
+    "Lite ve Global arasındaki fark nedir?",
+    "Lite, IRIAM Otomatik Dokunma için tek seferlik satın almadır. Global, okuma ve otomatik çeviri içeren aylık plandır. Güncel fiyatları ve deneme koşullarını uygulamada kontrol edin.",
+    "Bu resmi bir yayın platformu uygulaması mı?",
+    "Smart Live Assist bağımsız bir araçtır, IRIAM veya REALITY ile bağlantılı, onaylı veya sponsorlu değildir. Her platformun kurallarına uyun.",
+    "Bir sonraki yayınızı\ntakip etmek daha kolay.",
+    "Android dağıtımı hazırlanıyor. Resmi mağaza bağlantısı hazır olduğunda burada görünecektir.",
+    "İngilizce gerçek ekranlar. Fiyatlar ve deneme bilgileri çekim anındaki şekliyle gösterilmektedir."
   ]
 };
 export const slaMessages=Object.fromEntries(localeCodes.map(locale=>{const row=rows[locale];if(row.length!==keys.length||row.some(v=>!v.trim()))throw new Error('Missing SLA copy: '+locale);const copy=Object.fromEntries(keys.map((k,i)=>[k,row[i]]));return [locale,{...base[locale],...copy,eyebrow:'Smart Live Assist',note:'Android · IRIAM · REALITY',sectionIntro:'OCR · TTS · Auto Translation · Auto Tap',notice:''}];})) as Record<Locale,Messages>;

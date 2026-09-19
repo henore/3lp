@@ -6,4 +6,5 @@ export const contactLabels: Record<string, string> = {
   'pt-BR': 'Contato', nl: 'Contact', sv: 'Kontakta oss', pl: 'Kontakt',
   ru: 'Связаться с нами', ar: 'اتصل بنا', hi: 'संपर्क करें',
   th: 'ติดต่อเรา', vi: 'Liên hệ', id: 'Hubungi Kami',
+  tr: 'İletişim',
 };
