@@ -61,6 +61,16 @@
 .fd-showcase-list li{display:flex;gap:12px;align-items:baseline;padding:10px 0;font-size:.9375rem}
 .fd-showcase-list li span{color:var(--accent);font-size:.75rem}
 
+/* Alert */
+.fd-alert-inner{display:flex;align-items:center;gap:64px}
+.fd-alert-phone{flex-shrink:0}
+.fd-alert-copy{flex:1;min-width:0}
+.fd-alert-copy h2{margin-top:14px;font-size:1.8rem;white-space:pre-line}
+.fd-alert-copy p{color:var(--muted);margin-top:18px;font-size:.9375rem;line-height:1.9}
+.fd-alert-list{list-style:none;padding:0;margin-top:28px}
+.fd-alert-list li{display:flex;gap:12px;align-items:baseline;padding:10px 0;font-size:.9375rem}
+.fd-alert-list li span{font-size:.875rem}
+
 /* Gallery */
 .fd-gallery-note{font-size:.875rem;color:var(--muted);margin-bottom:28px}
 .fd-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
@@ -147,6 +157,8 @@ details[open] .fd-plus{transform:rotate(45deg)}
  .fd-steps li{padding-block:22px}
  .fd-showcase-inner{flex-direction:column;gap:36px}
  .fd-showcase-phone{order:-1}
+ .fd-alert-inner{flex-direction:column;gap:36px}
+ .fd-alert-phone{order:-1}
  .fd-gallery-grid{grid-template-columns:1fr;gap:36px}
  .fd-privacy-inner{grid-template-columns:1fr;gap:25px}
  .fd-plan-grid{grid-template-columns:1fr;gap:16px}

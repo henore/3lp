@@ -1,6 +1,6 @@
 import {messages as base, type Messages} from './messages';
 import {localeCodes,type Locale} from './locales';
-const keys=["eyebrow","title","highlight","intro","note","diary","diaryBody","patterns","patternsBody","learn","learnBody","sectionTitle","sectionIntro","approachTitle","approachBody","step1","step2","step3","q1","a1","q2","a2","q3","a3","downloadTitle","downloadBody","goal","elapsed","meal","remaining","privacyTitle","privacyBody","privacyNoAccount","privacyNoAds","privacyLocal","proTitle","proBody","proPrice","proItem1","proItem2","proItem3","proItem4","freeItem1","freeItem2","freeItem3"] as const;
+const keys=["eyebrow","title","highlight","intro","note","diary","diaryBody","patterns","patternsBody","learn","learnBody","sectionTitle","sectionIntro","approachTitle","approachBody","step1","step2","step3","q1","a1","q2","a2","q3","a3","downloadTitle","downloadBody","goal","elapsed","meal","remaining","privacyTitle","privacyBody","privacyNoAccount","privacyNoAds","privacyLocal","proTitle","proBody","proPrice","proItem1","proItem2","proItem3","proItem4","freeItem1","freeItem2","freeItem3","alertTitle","alertBody","alertNotify","alertStrong","alertReminder"] as const;
 type ProductCopy=Record<typeof keys[number],string>;
 export type FastingMessages=Messages & ProductCopy;
 const rows:Record<Locale,string[]>={
@@ -49,7 +49,12 @@ const rows:Record<Locale,string[]>={
     "より気づきやすい通知のStrong Alert",
     "基本タイマー",
     "通常のゴール通知",
-    "直近の記録"
+    "直近の記録",
+    "ゴールを、見逃さない。",
+    "通常のゴール通知に加え、ストロングアラート（アラーム）を搭載。Proではゴール前のリマインダーも最大3件設定できます。",
+    "ゴール達成で通知",
+    "ストロングアラート（アラーム）で確実に",
+    "リマインダーを最大3件設定（Pro）"
   ],
   "en": [
     "One small step after a meal.",
@@ -96,7 +101,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert for more noticeable notifications",
     "Basic fasting timer",
     "Regular goal notification",
-    "Recent entries"
+    "Recent entries",
+    "Never miss your goal.",
+    "Get notified with a regular alert, or switch on Strong Alert (Alarm) when you need something harder to ignore. Pro adds up to 3 reminders before your goal.",
+    "Goal reached notification",
+    "Strong Alert (Alarm) for reliable alerts",
+    "Up to 3 reminders before your goal (Pro)"
   ],
   "zh-CN": [
     "用餐之后，只需一步。",
@@ -143,7 +153,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert 更明显的通知",
     "基本计时器",
     "普通目标通知",
-    "近期记录"
+    "近期记录",
+    "目标达成，绝不错过。",
+    "普通通知之外，还有强力提醒（闹钟）功能。Pro 可在目标前设置最多 3 个提醒。",
+    "目标达成通知",
+    "强力提醒（闹钟），不会错过",
+    "目标前最多设 3 个提醒（Pro）"
   ],
   "zh-TW": [
     "用餐之後，只需一步。",
@@ -190,7 +205,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert 更明顯的通知",
     "基本計時器",
     "一般目標通知",
-    "近期紀錄"
+    "近期紀錄",
+    "目標達成，絕不錯過。",
+    "普通通知之外，還有強力提醒（鬧鐘）功能。Pro 可在目標前設定最多 3 個提醒。",
+    "目標達成通知",
+    "強力提醒（鬧鐘），不會錯過",
+    "目標前最多設 3 個提醒（Pro）"
   ],
   "ko": [
     "식사 후, 한 번만.",
@@ -237,7 +257,12 @@ const rows:Record<Locale,string[]>={
     "더 눈에 띄는 알림의 Strong Alert",
     "기본 타이머",
     "일반 목표 알림",
-    "최근 기록"
+    "최근 기록",
+    "목표, 놓치지 않게.",
+    "일반 알림 외에 Strong Alert(알람)을 지원합니다. Pro에서는 목표 전 리마인더를 최대 3개 설정할 수 있습니다.",
+    "목표 달성 알림",
+    "Strong Alert(알람)으로 확실하게",
+    "목표 전 리마인더 최대 3개(Pro)"
   ],
   "de": [
     "Ein kleiner Schritt nach dem Essen.",
@@ -284,7 +309,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert für auffälligere Hinweise",
     "Basistimer",
     "Normale Zielbenachrichtigung",
-    "Letzte Einträge"
+    "Letzte Einträge",
+    "Dein Ziel, immer im Blick.",
+    "Neben der normalen Benachrichtigung gibt es den Strong Alert (Alarm). Mit Pro kannst du bis zu 3 Erinnerungen vor dem Ziel einstellen.",
+    "Benachrichtigung bei Zielerreichung",
+    "Strong Alert (Alarm) für zuverlässige Hinweise",
+    "Bis zu 3 Erinnerungen vor dem Ziel (Pro)"
   ],
   "fr": [
     "Un petit geste après le repas.",
@@ -331,7 +361,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert pour des notifications plus perceptibles",
     "Minuteur de base",
     "Notification d’objectif classique",
-    "Entrées récentes"
+    "Entrées récentes",
+    "Ne ratez jamais votre objectif.",
+    "En plus de la notification classique, le Strong Alert (alarme) est intégré. Avec Pro, ajoutez jusqu'à 3 rappels avant l'objectif.",
+    "Notification d'objectif atteint",
+    "Strong Alert (alarme) pour ne rien manquer",
+    "Jusqu'à 3 rappels avant l'objectif (Pro)"
   ],
   "es": [
     "Un pequeño gesto después de comer.",
@@ -378,7 +413,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert para avisos más perceptibles",
     "Temporizador básico",
     "Notificación de objetivo normal",
-    "Entradas recientes"
+    "Entradas recientes",
+    "No te pierdas tu objetivo.",
+    "Además de la notificación habitual, cuenta con Strong Alert (alarma). Con Pro, configura hasta 3 recordatorios antes del objetivo.",
+    "Notificación de objetivo alcanzado",
+    "Strong Alert (alarma) para alertas seguras",
+    "Hasta 3 recordatorios antes del objetivo (Pro)"
   ],
   "it": [
     "Un piccolo gesto dopo il pasto.",
@@ -425,7 +465,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert per notifiche più evidenti",
     "Timer di base",
     "Notifica obiettivo normale",
-    "Registrazioni recenti"
+    "Registrazioni recenti",
+    "Non perdere mai il tuo obiettivo.",
+    "Oltre alla notifica normale, c'è lo Strong Alert (allarme). Con Pro puoi impostare fino a 3 promemoria prima dell'obiettivo.",
+    "Notifica al raggiungimento dell'obiettivo",
+    "Strong Alert (allarme) per avvisi sicuri",
+    "Fino a 3 promemoria prima dell'obiettivo (Pro)"
   ],
   "pt-BR": [
     "Um pequeno gesto após a refeição.",
@@ -472,7 +517,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert para notificações mais perceptíveis",
     "Timer básico",
     "Notificação de meta normal",
-    "Registros recentes"
+    "Registros recentes",
+    "Nunca perca sua meta.",
+    "Além da notificação padrão, o Strong Alert (alarme) está integrado. Com o Pro, configure até 3 lembretes antes da meta.",
+    "Notificação de meta atingida",
+    "Strong Alert (alarme) para alertas confiáveis",
+    "Até 3 lembretes antes da meta (Pro)"
   ],
   "nl": [
     "Een klein gebaar na je maaltijd.",
@@ -519,7 +569,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert voor opvallendere meldingen",
     "Basistimer",
     "Gewone doelmelding",
-    "Recente notities"
+    "Recente notities",
+    "Mis je doel nooit.",
+    "Naast de standaard melding is er Strong Alert (alarm). Met Pro stel je tot 3 herinneringen in vóór je doel.",
+    "Melding bij doelbereik",
+    "Strong Alert (alarm) voor betrouwbare meldingen",
+    "Tot 3 herinneringen vóór je doel (Pro)"
   ],
   "sv": [
     "En liten handling efter maten.",
@@ -566,7 +621,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert för tydligare aviseringar",
     "Grundtimer",
     "Vanlig målnotis",
-    "Senaste posterna"
+    "Senaste posterna",
+    "Missa aldrig ditt mål.",
+    "Utöver vanlig avisering finns Strong Alert (alarm). Med Pro kan du ställa in upp till 3 påminnelser före målet.",
+    "Avisering vid uppnått mål",
+    "Strong Alert (alarm) för säkra påminnelser",
+    "Upp till 3 påminnelser före målet (Pro)"
   ],
   "pl": [
     "Mały krok po posiłku.",
@@ -613,7 +673,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert — bardziej zauważalne powiadomienia",
     "Podstawowy licznik",
     "Zwykłe powiadomienie o celu",
-    "Ostatnie wpisy"
+    "Ostatnie wpisy",
+    "Nie przegap swojego celu.",
+    "Oprócz zwykłego powiadomienia dostępny jest Strong Alert (alarm). W Pro możesz ustawić do 3 przypomnień przed celem.",
+    "Powiadomienie o osiągnięciu celu",
+    "Strong Alert (alarm) — pewne powiadomienie",
+    "Do 3 przypomnień przed celem (Pro)"
   ],
   "ru": [
     "Один шаг после еды.",
@@ -660,7 +725,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert — более заметные уведомления",
     "Базовый таймер",
     "Обычное уведомление о цели",
-    "Последние записи"
+    "Последние записи",
+    "Не пропустите свою цель.",
+    "Помимо обычного уведомления доступен Strong Alert (будильник). В Pro можно настроить до 3 напоминаний перед целью.",
+    "Уведомление о достижении цели",
+    "Strong Alert (будильник) для надёжных оповещений",
+    "До 3 напоминаний перед целью (Pro)"
   ],
   "ar": [
     "خطوة صغيرة بعد الوجبة.",
@@ -707,7 +777,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert لإشعارات أوضح",
     "المؤقّت الأساسي",
     "إشعار الهدف العادي",
-    "الإدخالات الأخيرة"
+    "الإدخالات الأخيرة",
+    "لا تفوّت هدفك.",
+    "بالإضافة إلى الإشعار العادي، يتوفر Strong Alert (منبّه). مع Pro يمكنك ضبط حتى 3 تذكيرات قبل الهدف.",
+    "إشعار عند بلوغ الهدف",
+    "Strong Alert (منبّه) لتنبيهات موثوقة",
+    "حتى 3 تذكيرات قبل الهدف (Pro)"
   ],
   "hi": [
     "भोजन के बाद, बस एक कदम।",
@@ -754,7 +829,12 @@ const rows:Record<Locale,string[]>={
     "अधिक स्पष्ट सूचनाओं के लिए Strong Alert",
     "मूल टाइमर",
     "सामान्य लक्ष्य सूचना",
-    "हाल के रिकॉर्ड"
+    "हाल के रिकॉर्ड",
+    "अपना लक्ष्य कभी न चूकें।",
+    "सामान्य सूचना के अलावा, Strong Alert (अलार्म) उपलब्ध है। Pro में लक्ष्य से पहले 3 रिमाइंडर तक सेट कर सकते हैं।",
+    "लक्ष्य पूर्ति की सूचना",
+    "Strong Alert (अलार्म) से पक्की सूचना",
+    "लक्ष्य से पहले 3 रिमाइंडर तक (Pro)"
   ],
   "th": [
     "ก้าวเล็ก ๆ หลังมื้ออาหาร",
@@ -801,7 +881,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert สำหรับการแจ้งเตือนที่ชัดเจนขึ้น",
     "ตัวจับเวลาพื้นฐาน",
     "การแจ้งเตือนเป้าหมายปกติ",
-    "รายการล่าสุด"
+    "รายการล่าสุด",
+    "ไม่พลาดเป้าหมาย",
+    "นอกจากการแจ้งเตือนปกติ ยังมี Strong Alert (เสียงปลุก) ในตัว Pro เพิ่มตัวเตือนก่อนเป้าหมายได้สูงสุด 3 รายการ",
+    "แจ้งเตือนเมื่อถึงเป้าหมาย",
+    "Strong Alert (เสียงปลุก) เพื่อไม่ให้พลาด",
+    "ตั้งตัวเตือนสูงสุด 3 รายการ (Pro)"
   ],
   "vi": [
     "Một bước nhỏ sau bữa ăn.",
@@ -848,7 +933,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert cho thông báo rõ ràng hơn",
     "Bộ đếm cơ bản",
     "Thông báo mục tiêu thông thường",
-    "Các mục gần đây"
+    "Các mục gần đây",
+    "Không bỏ lỡ mục tiêu.",
+    "Ngoài thông báo thường, còn có Strong Alert (báo thức). Pro cho phép đặt tối đa 3 nhắc nhở trước mục tiêu.",
+    "Thông báo khi đạt mục tiêu",
+    "Strong Alert (báo thức) để cảnh báo chắc chắn",
+    "Tối đa 3 nhắc nhở trước mục tiêu (Pro)"
   ],
   "id": [
     "Satu langkah kecil setelah makan.",
@@ -895,7 +985,12 @@ const rows:Record<Locale,string[]>={
     "Strong Alert untuk notifikasi yang lebih terasa",
     "Timer dasar",
     "Notifikasi target biasa",
-    "Catatan terbaru"
+    "Catatan terbaru",
+    "Jangan lewatkan targetmu.",
+    "Selain notifikasi biasa, tersedia Strong Alert (alarm). Dengan Pro, atur hingga 3 pengingat sebelum target.",
+    "Notifikasi target tercapai",
+    "Strong Alert (alarm) untuk peringatan andal",
+    "Hingga 3 pengingat sebelum target (Pro)"
   ],
   "tr": [
     "Yemekten sonra küçük bir adım.",
@@ -942,7 +1037,12 @@ const rows:Record<Locale,string[]>={
     "Daha belirgin bildirimler için Strong Alert",
     "Temel zamanlayıcı",
     "Normal hedef bildirimi",
-    "Son kayıtlar"
+    "Son kayıtlar",
+    "Hedefinizi asla kaçırmayın.",
+    "Normal bildirimin yanı sıra Strong Alert (alarm) özelliği mevcuttur. Pro ile hedefinizden önce 3 hatırlatıcıya kadar ayarlayabilirsiniz.",
+    "Hedefe ulaşma bildirimi",
+    "Strong Alert (alarm) ile güvenilir uyarılar",
+    "Hedefinizden önce 3 hatırlatıcıya kadar (Pro)"
   ]
 };
 const downloadLabels:Record<Locale,string>={"ja":"ダウンロード","en":"Download","zh-CN":"下载","zh-TW":"下載","ko":"다운로드","de":"Herunterladen","fr":"Télécharger","es":"Descargar","it":"Scarica","pt-BR":"Baixar","nl":"Downloaden","sv":"Ladda ned","pl":"Pobierz","ru":"Скачать","ar":"تنزيل","hi":"डाउनलोड करें","th":"ดาวน์โหลด","vi":"Tải xuống","id":"Unduh","tr":"İndir"};

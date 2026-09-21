@@ -100,9 +100,28 @@ const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
   </div>
  </section>
 
+ <!-- Alert -->
+ <section class="fd-alert section wrap">
+  <div class="fd-alert-inner">
+   <div class="fd-alert-copy">
+    <span class="fd-eyebrow">04 / Alert</span>
+    <h2>{t.alertTitle}</h2>
+    <p>{t.alertBody}</p>
+    <ul class="fd-alert-list">
+     <li><span aria-hidden="true">🔔</span>{t.alertNotify}</li>
+     <li><span aria-hidden="true">🔊</span>{t.alertStrong}</li>
+     <li><span aria-hidden="true">⏰</span>{t.alertReminder}</li>
+    </ul>
+   </div>
+   <figure class="fd-alert-phone">
+    <div class="fd-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/setting.jpg'} alt={t.alertTitle} width="876" height="1800" loading="lazy" decoding="async"/></div>
+   </figure>
+  </div>
+ </section>
+
  <!-- History & Stats -->
  <section class="fd-gallery section wrap">
-  <div class="fd-section-head"><span class="fd-eyebrow">04 / Stats</span><h2>{sc[2]}</h2></div>
+  <div class="fd-section-head"><span class="fd-eyebrow">05 / Stats</span><h2>{sc[2]}</h2></div>
   <p class="fd-gallery-note">{sc[0]}</p>
   <div class="fd-gallery-grid">
    {['history','stats','detail'].map((name,i)=>(
@@ -118,7 +137,7 @@ const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
  <section class="fd-privacy section">
   <div class="wrap fd-privacy-inner">
    <div class="fd-privacy-copy">
-    <span class="fd-eyebrow">05 / Privacy</span>
+    <span class="fd-eyebrow">06 / Privacy</span>
     <h2>{t.privacyTitle}</h2>
     <p>{t.privacyBody}</p>
    </div>
@@ -132,7 +151,7 @@ const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
 
  <!-- Pro -->
  <section class="fd-pro section wrap">
-  <div class="fd-section-head"><span class="fd-eyebrow">06 / Pro</span><h2>{t.proTitle}</h2><p>{t.proBody}</p></div>
+  <div class="fd-section-head"><span class="fd-eyebrow">07 / Pro</span><h2>{t.proTitle}</h2><p>{t.proBody}</p></div>
   <div class="fd-plan-grid">
    <div class="fd-plan-card">
     <h3>Free</h3>
