@@ -1,6 +1,6 @@
 ---
 import fs from 'node:fs';
-import {fileURLToPath} from 'node:url';
+import path from 'node:path';
 import Header from '../../../../packages/ui/Header.astro';
 import Seo from '../../../../packages/ui/Seo.astro';
 import Footer from '../../../../packages/ui/Footer.astro';
@@ -13,11 +13,14 @@ import SleepPreview from './SleepPreview.astro';
 import ScreenshotGallery from './ScreenshotGallery.astro';
 import baseStyles from '../../../../packages/ui/styles.css?inline';
 import theme from './screens.css?inline';
+import {watchCopy} from '../../../../packages/i18n/cbti-watch';
 interface Props {locale:Locale;}
 const {locale}=Astro.props;
 const t:CbtiMessages={...cbtiMessages[locale],notice:''};
-const ssDir=fileURLToPath(new URL('../../apps/simple-cbt-i/public/screenshots',import.meta.url));
+const ssDir=path.resolve('apps/simple-cbt-i/public/screenshots');
 const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
+const watch=watchCopy[locale];
+const watchLocale=fs.existsSync(ssDir+'/'+locale+'/main2.jpg') ? locale : 'en';
 const faq:Array<[string,string]>=[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3],[t.q4,t.a4],[t.q5,t.a5]];
 ---
 <!doctype html>
@@ -36,13 +39,14 @@ const faq:Array<[string,string]>=[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3],[t.q4,t.a4
 
  <section class="insight-section"><div class="wrap insight-inner"><div class="insight-copy"><span class="eyebrow insight-eyebrow">02 / AI Daily Insight</span><h2>{t.insightDetailTitle}</h2><p>{t.insightDetailBody}</p><p class="insight-note"><span aria-hidden="true">✦</span>{t.insightDetailNote}</p></div><figure class="insight-phone"><div class="phone cbti-screen-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/insight.jpg'} alt={'AI Daily Insight — '+t.insightDetailBody} width="720" height="1560" loading="lazy" decoding="async"/></div></figure></div></section>
 
- <section id="approach" class="approach"><div class="wrap approach-inner"><div><span class="eyebrow">03 / {t.approach}</span><h2>{t.approachTitle}</h2><p>{t.approachBody}</p></div><ol class="steps">{[t.step1,t.step2,t.step3].map((step,i)=><li><span class="step-number">{'0'+(i+1)}</span><span>{step}</span><span class="step-mark" aria-hidden="true">{['↗','⌁','✧'][i]}</span></li>)}</ol></div></section>
+ <section id="watch-sync" class="watch-section"><div class="wrap insight-inner"><div class="insight-copy"><span class="eyebrow">03 / Apple Watch &amp; Smartwatch</span><h2>{watch.title}</h2><p>{watch.body}</p><p class="watch-note">{watch.note}</p></div><figure class="insight-phone"><div class="phone cbti-screen-phone" dir="ltr"><img src={'/screenshots/'+watchLocale+'/main2.jpg'} alt={watch.body} width="720" height="1560" loading="lazy" decoding="async"/></div></figure></div></section>
+ <section id="approach" class="approach"><div class="wrap approach-inner"><div><span class="eyebrow">04 / {t.approach}</span><h2>{t.approachTitle}</h2><p>{t.approachBody}</p></div><ol class="steps">{[t.step1,t.step2,t.step3].map((step,i)=><li><span class="step-number">{'0'+(i+1)}</span><span>{step}</span><span class="step-mark" aria-hidden="true">{['↗','⌁','✧'][i]}</span></li>)}</ol></div></section>
 
- <section class="trends section wrap"><div class="section-heading"><div><span class="eyebrow">04 / Stats</span><h2>{t.trendTitle}</h2></div><p>{t.trendBody}</p></div><ScreenshotGallery t={t} locale={locale}/></section>
+ <section class="trends section wrap"><div class="section-heading"><div><span class="eyebrow">05 / Stats</span><h2>{t.trendTitle}</h2></div><p>{t.trendBody}</p></div><ScreenshotGallery t={t} locale={locale}/></section>
 
- <section class="guide-section section wrap"><div class="guide-inner"><div class="section-heading"><div><span class="eyebrow">05 / {t.guideTitle}</span><h2>{t.guideFullName}</h2></div><p>{t.guideBody}</p></div><figure class="guide-phone"><div class="phone cbti-screen-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/detail.jpg'} alt={t.guideFullName} width="720" height="1560" loading="lazy" decoding="async"/></div></figure></div></section>
+ <section class="guide-section section wrap"><div class="guide-inner"><div class="section-heading"><div><span class="eyebrow">06 / {t.guideTitle}</span><h2>{t.guideFullName}</h2></div><p>{t.guideBody}</p></div><figure class="guide-phone"><div class="phone cbti-screen-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/detail.jpg'} alt={t.guideFullName} width="720" height="1560" loading="lazy" decoding="async"/></div></figure></div></section>
 
- <section class="not-section"><div class="wrap not-inner"><h2>{t.notTitle}</h2><ul class="not-list">{[t.notMic,t.notSnoring,t.notSounds,t.notWearable,t.notStages,t.notProgram].map(item=><li><span aria-hidden="true">✕</span>{item}</li>)}</ul><p class="not-instead">{t.notInstead}</p></div></section>
+ <section class="not-section"><div class="wrap not-inner"><h2>{t.notTitle}</h2><ul class="not-list">{[t.notMic,t.notSnoring,t.notSounds,t.notStages,t.notProgram].map(item=><li><span aria-hidden="true">✕</span>{item}</li>)}</ul><p class="not-instead">{t.notInstead}</p></div></section>
 
  <section class="plan-section section wrap"><span class="eyebrow">{t.planTitle}</span><div class="plan-grid"><div class="plan-card"><h3>{t.freeLabel}</h3><ul>{[t.freeItem1,t.freeItem2,t.freeItem3,t.freeItem4,t.freeItem5].map(item=><li><span aria-hidden="true">✓</span>{item}</li>)}</ul></div><div class="plan-card plan-pro"><h3>{t.proLabel}</h3><ul>{[t.proItem1,t.proItem2].map(item=><li><span aria-hidden="true">✦</span>{item}</li>)}</ul></div></div></section>
 
