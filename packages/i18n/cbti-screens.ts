@@ -1,4 +1,26 @@
 import type {Locale} from './locales';
+export const cbtiStatsDescriptions:Record<Locale,{weekly:string;trend:string}>={
+ja:{weekly:'実際に眠っていた時間、入眠までの時間、中途覚醒を色分けした棒グラフで、日ごとの睡眠を確認できます。',trend:'睡眠効率の推移を折れ線グラフで表示。日ごとの変化をひと目で確認できます。'},
+en:{weekly:'View each day’s sleep in a bar chart with separate colors for actual sleep, time to fall asleep, and night waking.',trend:'Follow your sleep efficiency over time in a line chart and see daily changes at a glance.'},
+'zh-CN':{weekly:'通过柱状图查看每日睡眠，以不同颜色区分实际睡眠、入睡所需时间和夜间清醒。',trend:'通过折线图查看睡眠效率的变化，每日趋势一目了然。'},
+'zh-TW':{weekly:'透過長條圖查看每日睡眠，以不同顏色區分實際睡眠、入睡所需時間與夜間清醒。',trend:'透過折線圖查看睡眠效率的變化，每日趨勢一目瞭然。'},
+ko:{weekly:'실제 수면 시간, 잠드는 데 걸린 시간, 밤중에 깨어 있던 시간을 색으로 구분한 막대그래프로 매일의 수면을 확인하세요.',trend:'수면 효율의 추이를 꺾은선그래프로 표시해 매일의 변화를 한눈에 확인할 수 있습니다.'},
+de:{weekly:'Ein Balkendiagramm zeigt Ihren täglichen Schlaf mit unterschiedlichen Farben für tatsächlichen Schlaf, Einschlafzeit und nächtliche Wachphasen.',trend:'Verfolgen Sie Ihre Schlafeffizienz im Liniendiagramm und erkennen Sie tägliche Veränderungen auf einen Blick.'},
+fr:{weekly:'Consultez votre sommeil quotidien dans un graphique en barres : sommeil réel, temps d’endormissement et éveils nocturnes sont distingués par couleur.',trend:'Suivez l’évolution de votre efficacité du sommeil sur une courbe et repérez les variations quotidiennes en un coup d’œil.'},
+es:{weekly:'Consulta tu sueño diario en un gráfico de barras con colores distintos para el sueño real, el tiempo para dormirte y los despertares nocturnos.',trend:'Sigue la evolución de tu eficiencia del sueño en un gráfico de líneas y observa los cambios diarios de un vistazo.'},
+it:{weekly:'Visualizza il sonno quotidiano in un grafico a barre con colori diversi per sonno effettivo, tempo per addormentarsi e risvegli notturni.',trend:'Segui l’andamento dell’efficienza del sonno in un grafico a linee e osserva a colpo d’occhio i cambiamenti quotidiani.'},
+'pt-BR':{weekly:'Veja o sono de cada dia em um gráfico de barras com cores diferentes para sono real, tempo para adormecer e períodos acordado durante a noite.',trend:'Acompanhe a evolução da eficiência do sono em um gráfico de linhas e veja as mudanças diárias de relance.'},
+nl:{weekly:'Bekijk je dagelijkse slaap in een staafdiagram met aparte kleuren voor daadwerkelijke slaap, inslaaptijd en wakker liggen tijdens de nacht.',trend:'Volg je slaapefficiëntie in een lijndiagram en bekijk dagelijkse veranderingen in één oogopslag.'},
+sv:{weekly:'Se varje dags sömn i ett stapeldiagram med olika färger för faktisk sömn, insomningstid och vaken tid under natten.',trend:'Följ din sömneffektivitet i ett linjediagram och se dagliga förändringar med en blick.'},
+pl:{weekly:'Sprawdź codzienny sen na wykresie słupkowym z osobnymi kolorami dla rzeczywistego snu, czasu zasypiania i nocnych przebudzeń.',trend:'Śledź zmiany efektywności snu na wykresie liniowym i szybko porównuj kolejne dni.'},
+ru:{weekly:'Просматривайте сон по дням на столбчатой диаграмме: фактический сон, время засыпания и ночное бодрствование выделены разными цветами.',trend:'Следите за эффективностью сна на линейном графике и замечайте ежедневные изменения с первого взгляда.'},
+ar:{weekly:'اعرض نوم كل يوم في مخطط أعمدة بألوان مختلفة للنوم الفعلي والوقت المستغرق للاستغراق في النوم والاستيقاظ أثناء الليل.',trend:'تابع تغير كفاءة نومك في مخطط خطي، واطّلع على التغيرات اليومية بنظرة سريعة.'},
+hi:{weekly:'बार चार्ट में हर दिन की नींद देखें। वास्तविक नींद, नींद आने में लगा समय और रात में जागने का समय अलग-अलग रंगों में दिखते हैं।',trend:'लाइन चार्ट में नींद की दक्षता का रुझान देखें और रोज़ के बदलाव एक नज़र में समझें।'},
+th:{weekly:'ดูการนอนแต่ละวันในกราฟแท่ง โดยแยกสีเวลาที่หลับจริง เวลาที่ใช้กว่าจะหลับ และเวลาที่ตื่นกลางดึก',trend:'ติดตามแนวโน้มประสิทธิภาพการนอนด้วยกราฟเส้น และดูการเปลี่ยนแปลงในแต่ละวันได้อย่างรวดเร็ว'},
+vi:{weekly:'Xem giấc ngủ mỗi ngày trên biểu đồ cột với các màu riêng cho thời gian ngủ thực tế, thời gian để vào giấc và thời gian thức giữa đêm.',trend:'Theo dõi xu hướng hiệu suất giấc ngủ trên biểu đồ đường và dễ dàng nhận ra thay đổi hằng ngày.'},
+id:{weekly:'Lihat tidur harian dalam diagram batang dengan warna berbeda untuk waktu tidur aktual, waktu untuk tertidur, dan waktu terjaga di malam hari.',trend:'Pantau tren efisiensi tidur dalam grafik garis dan lihat perubahan harian sekilas.'},
+tr:{weekly:'Günlük uykunuzu; gerçek uyku, uykuya dalma süresi ve gece uyanıklığını farklı renklerle gösteren sütun grafiğinde inceleyin.',trend:'Uyku verimliliğinizin seyrini çizgi grafikte takip edin ve günlük değişimleri bir bakışta görün.'}
+};
 export const cbtiScreenCaption:Record<Locale,string>={
 ja:'アプリの実画面。表示言語・内容は撮影時点のものです。',
 en:'Actual app screens. Language and content are shown as captured.',
