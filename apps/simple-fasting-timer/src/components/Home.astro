@@ -17,6 +17,7 @@ const t=fastingMessages[locale];
 const sc=screenCopy[locale];
 const ssDir=fileURLToPath(new URL('../../apps/simple-fasting-timer/public/screenshots',import.meta.url));
 const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
+const settingLocale=fs.existsSync(ssDir+'/'+ssLocale+'/setting.jpg') ? ssLocale : 'en';
 ---
 <!doctype html>
 <html lang={locale} dir={direction(locale)}>
@@ -114,7 +115,7 @@ const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
     </ul>
    </div>
    <figure class="fd-alert-phone">
-    <div class="fd-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/setting.jpg'} alt={t.alertTitle} width="876" height="1800" loading="lazy" decoding="async"/></div>
+    <div class="fd-phone" dir="ltr"><img src={'/screenshots/'+settingLocale+'/setting.jpg'} alt={t.alertTitle} width="876" height="1800" loading="lazy" decoding="async"/></div>
    </figure>
   </div>
  </section>
