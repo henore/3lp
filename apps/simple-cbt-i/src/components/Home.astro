@@ -13,6 +13,7 @@ import SleepPreview from './SleepPreview.astro';
 import ScreenshotGallery from './ScreenshotGallery.astro';
 import baseStyles from '../../../../packages/ui/styles.css?inline';
 import theme from './screens.css?inline';
+import {cbtiProBenefits} from '../../../../packages/i18n/cbti-pro';
 import {watchCopy} from '../../../../packages/i18n/cbti-watch';
 interface Props {locale:Locale;}
 const {locale}=Astro.props;
@@ -48,7 +49,7 @@ const faq:Array<[string,string]>=[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3],[t.q4,t.a4
 
  <section class="not-section"><div class="wrap not-inner"><h2>{t.notTitle}</h2><ul class="not-list">{[t.notMic,t.notSnoring,t.notSounds,t.notStages,t.notProgram].map(item=><li><span aria-hidden="true">✕</span>{item}</li>)}</ul><p class="not-instead">{t.notInstead}</p></div></section>
 
- <section class="plan-section section wrap"><span class="eyebrow">{t.planTitle}</span><div class="plan-grid"><div class="plan-card"><h3>{t.freeLabel}</h3><ul>{[t.freeItem1,t.freeItem2,t.freeItem3,t.freeItem4,t.freeItem5].map(item=><li><span aria-hidden="true">✓</span>{item}</li>)}</ul></div><div class="plan-card plan-pro"><h3>{t.proLabel}</h3><ul>{[t.proItem1,t.proItem2].map(item=><li><span aria-hidden="true">✦</span>{item}</li>)}</ul></div></div></section>
+ <section class="plan-section section wrap"><span class="eyebrow">{t.planTitle}</span><div class="plan-grid"><div class="plan-card"><h3>{t.freeLabel}</h3><ul>{[t.freeItem1,t.freeItem2,t.freeItem3,t.freeItem4,t.freeItem5].map(item=><li><span aria-hidden="true">✓</span>{item}</li>)}</ul></div><div class="plan-card plan-pro"><h3>{t.proLabel}</h3><ul>{cbtiProBenefits[locale].map(([title,description])=><li><span aria-hidden="true">✦</span><span><strong>{title}</strong> — {description}</span></li>)}</ul></div></div></section>
 
  <section class="trust-section section wrap"><h2>{t.dataTitle}</h2><div class="trust-grid"><div class="trust-backup"><h3>{t.backupLabel}</h3><p>{t.backupBody}</p></div><div class="trust-privacy">{[t.privacyNoAccount,t.privacyNoMic,t.privacyMinimal].map(item=><p><span aria-hidden="true">✓</span>{item}</p>)}</div></div></section>
 
