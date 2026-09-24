@@ -45,8 +45,8 @@
 
 .plan-section{border-top:1px solid var(--line);padding-top:60px}
 .plan-section>.eyebrow{display:block;margin-bottom:28px;font-size:.875rem}
-.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px}
-.plan-card{border:1px solid var(--line);border-radius:14px;padding:30px}
+.plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:700px}
+.plan-card{min-width:0;border:1px solid var(--line);border-radius:14px;padding:30px}
 .plan-card h3{font-size:1.3rem;margin-bottom:20px}
 .plan-card ul{list-style:none;padding:0;margin:0}
 .plan-card li{display:flex;align-items:center;gap:10px;font-size:.9375rem;color:var(--muted);padding:8px 0}
@@ -54,6 +54,10 @@
 .plan-pro{border-color:#c8bfe8;background:#faf8ff}
 .plan-pro h3{color:var(--accent)}
 .plan-pro li span{color:#7b6bc4}
+.plan-pro li{align-items:flex-start}
+.pro-benefit-copy{flex:1;min-width:0;overflow-wrap:anywhere;line-height:1.7}
+.pro-benefit-copy strong{display:block;color:var(--ink)}
+.pro-benefit-copy p{margin:4px 0 0;font-size:inherit;line-height:inherit}
 @media(max-width:760px){.plan-grid{grid-template-columns:1fr}.plan-section{padding-top:40px}}
 
 .trust-section{border-top:1px solid var(--line)}
