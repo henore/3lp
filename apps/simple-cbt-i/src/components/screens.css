@@ -76,3 +76,4 @@
 .watch-section h2{margin-top:18px;font-size:2.1rem;line-height:1.7;white-space:pre-line}
 .watch-section p{margin-top:20px;font-size:.9375rem;line-height:2.1}
 .watch-section .watch-note{font-size:.875rem;color:var(--muted)}
+.hero-purpose{margin-top:20px;font-size:1.0625rem;font-weight:600;line-height:1.8;color:var(--ink);overflow-wrap:anywhere}
