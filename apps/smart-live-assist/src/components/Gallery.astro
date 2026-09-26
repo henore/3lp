@@ -6,7 +6,7 @@ import type {Locale} from '../../../../packages/i18n/locales';
 interface Props {t:Messages;locale:Locale;}
 const {t,locale}=Astro.props;
 const ssDir=fileURLToPath(new URL('../../apps/smart-live-assist/public/screenshots',import.meta.url));
-const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
-const screens=[{name:'auto-tap',title:'Auto Tap',text:t.learnBody},{name:'guide',title:'Guide',text:t.approachBody},{name:'upgrade',title:'Lite / Global',text:t.a2}];
+const ssLocale=fs.existsSync(ssDir+'/'+locale+'/reader.jpg') ? locale : 'en';
+const screens=[{name:'reader',title:'Reader',text:t.diaryBody},{name:'guide',title:'Guide',text:t.patternsBody}];
 ---
-<div class="sla-gallery"><h3>{t.secondary}</h3><p class="sla-disclosure">{t.preview}</p><div class="sla-screen-grid">{screens.map(s=><figure class="sla-screen-card"><a class="sla-screen-image" href={'/screenshots/'+ssLocale+'/'+s.name+'.png'}><img src={'/screenshots/'+ssLocale+'/'+s.name+'.png'} alt={s.title+' — '+s.text} width="892" height="1834" loading="lazy" decoding="async"/></a><figcaption><strong lang="en">{s.title}</strong><p>{s.text}</p></figcaption></figure>)}</div></div>
+<div class="sla-gallery"><h3>{t.secondary}</h3><p class="sla-disclosure">{t.preview}</p><div class="sla-screen-grid">{screens.map(s=><figure class="sla-screen-card"><a class="sla-screen-image" href={'/screenshots/'+ssLocale+'/'+s.name+'.jpg'}><img src={'/screenshots/'+ssLocale+'/'+s.name+'.jpg'} alt={s.title+' — '+s.text} width="892" height="1834" loading="lazy" decoding="async"/></a><figcaption><strong lang="en">{s.title}</strong><p>{s.text}</p></figcaption></figure>)}</div></div>

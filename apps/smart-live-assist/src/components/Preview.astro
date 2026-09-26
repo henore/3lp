@@ -6,6 +6,6 @@ import type {Locale} from '../../../../packages/i18n/locales';
 interface Props {t:Messages;locale:Locale;}
 const {t,locale}=Astro.props;
 const ssDir=fileURLToPath(new URL('../../apps/smart-live-assist/public/screenshots',import.meta.url));
-const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
+const ssLocale=fs.existsSync(ssDir+'/'+locale+'/reader.jpg') ? locale : 'en';
 ---
-<figure class="preview-scene sla-preview"><div class="orbital orbital-one" aria-hidden="true"></div><div class="orbital orbital-two" aria-hidden="true"></div><div class="phone sla-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/reader.png'} alt={t.diary+' — Reader'} width="892" height="1834" fetchpriority="high"/></div><figcaption>{t.preview}</figcaption></figure>
+<figure class="preview-scene sla-preview"><div class="orbital orbital-one" aria-hidden="true"></div><div class="orbital orbital-two" aria-hidden="true"></div><div class="phone sla-phone" dir="ltr"><img src={'/screenshots/'+ssLocale+'/reader.jpg'} alt={t.diary+' — Reader'} width="892" height="1834" fetchpriority="high"/></div><figcaption>{t.preview}</figcaption></figure>
