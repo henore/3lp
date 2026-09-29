@@ -13,12 +13,13 @@ import SleepPreview from './SleepPreview.astro';
 import ScreenshotGallery from './ScreenshotGallery.astro';
 import baseStyles from '../../../../packages/ui/styles.css?inline';
 import theme from './screens.css?inline';
+import {downloadLabels} from '../../../../packages/i18n/download';
 import {cbtiPurpose} from '../../../../packages/i18n/cbti-purpose';
 import {cbtiProBenefits} from '../../../../packages/i18n/cbti-pro';
 import {watchCopy} from '../../../../packages/i18n/cbti-watch';
 interface Props {locale:Locale;}
 const {locale}=Astro.props;
-const t:CbtiMessages={...cbtiMessages[locale],notice:''};
+const t:CbtiMessages={...cbtiMessages[locale],notice:'',...(app.stores.google ? {cta:downloadLabels[locale]} : {})};
 const ssDir=path.resolve('apps/simple-cbt-i/public/screenshots');
 const ssLocale=fs.existsSync(ssDir+'/'+locale) ? locale : 'en';
 const watch=watchCopy[locale];

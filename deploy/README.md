@@ -6,7 +6,7 @@
 
 - `sites.json` の各 `privacyUrl` / `termsUrl` に、運営者が承認した実際のアプリのポリシーURLを設定する。設定後、全言語のフッターとSupportページに表示される。未設定時はリンクを表示しない。規約を捏造した仮ページは生成しない。
 - 本文をこのリポジトリでホストする場合は、本文・運営者情報・適用範囲・アプリとWebのデータ取扱いを確定してからページを追加する。アプリのスクリーンショットにある規約の断片だけでは不十分。
-- FastのGoogle Playは設定済み。CBT-I / Smart Live Assistはユーザー指示により後回し。`playStoreUrl` を追加して再ビルドすると導線に反映される。
+- FastとCBT-IのGoogle Playは設定済み。Smart Live Assistはユーザー指示により後回し。`playStoreUrl` を追加して再ビルドすると導線に反映される。
 - `node scripts/production.mjs check` は未承認のPrivacy/Termsが残る間、終了コード2を返す。ビルド・技術確認は可能だが、全項目完了を意味しない。
 
 ## 初回：既存手順でNode 22・Nginxを導入したEC2
