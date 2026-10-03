@@ -1,0 +1,8 @@
+---
+interface Props {url?:string|null;locale:string;label:string;}
+const {url,locale,label}=Astro.props;
+const pending:Record<string,string>={ja:'リリース準備中',en:'Coming soon','zh-CN':'即将上线','zh-TW':'即將推出',ko:'출시 준비 중',de:'Demnächst verfügbar',fr:'Bientôt disponible',es:'Próximamente',it:'Prossimamente','pt-BR':'Em breve',nl:'Binnenkort beschikbaar',sv:'Kommer snart',pl:'Wkrótce',ru:'Скоро',ar:'قريبًا',hi:'जल्द आ रहा है',th:'เร็ว ๆ นี้',vi:'Sắp ra mắt',id:'Segera hadir',tr:'Yakında'};
+---
+{url ? <a class="app-store-badge" href={url} aria-label={label+' — App Store'}><img src={'/badges/apple/'+locale.toLowerCase()+'.svg'} alt="App Store" width="180" height="54"/></a> : <div class="app-store-badge"><img src={'/badges/apple/'+locale.toLowerCase()+'.svg'} alt="App Store" width="180" height="54"/><span class="pending-label">{pending[locale] ?? pending.en}</span></div>}
+<style>.pending-label{display:block;text-align:center;font-size:.75rem;line-height:1.6;margin-top:6px;color:var(--muted,#555);overflow-wrap:anywhere}</style>
+<style>.app-store-badge{display:inline-block;width:200px;max-width:100%;padding:10px;line-height:0;border-radius:8px;flex-shrink:0}.app-store-badge img{display:block;width:100%;height:auto}.app-store-badge:focus-visible{outline:3px solid var(--accent,#375bd2);outline-offset:3px}</style>
