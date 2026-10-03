@@ -30,7 +30,7 @@ const faq:Array<[string,string]>=[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3],[t.q4,t.a4
 <html lang={locale} dir={direction(locale)}>
 <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content={app.accent}/><link rel="icon" href="/favicon.png"/><Seo name={app.name} title={app.name+' — '+t.title+' '+t.highlight} description={t.intro} locale={locale} site={Astro.site} defaultLocale="en"/><style is:inline set:html={baseStyles}/><style is:inline set:html={theme}/></head>
 <body data-brand={app.slug} style={'--accent:'+app.accent}>
- <div class="wrap"><Header locale={locale} t={t} name={app.name}/></div>
+ <div class="wrap"><Header locale={locale} t={t} name={app.name} icon="/icon.png"/></div>
  <main id="main">
 
  <section class="hero wrap">
@@ -61,6 +61,6 @@ const faq:Array<[string,string]>=[[t.q1,t.a1],[t.q2,t.a2],[t.q3,t.a3],[t.q4,t.a4
  </main>
 
  <div class="disclaimer-bar"><p class="wrap">{t.disclaimer}</p></div>
- <Footer t={t} locale={locale} name={app.name}/>
+ <Footer t={t} locale={locale} name={app.name} icon="/icon.png"/>
 </body>
 </html>
