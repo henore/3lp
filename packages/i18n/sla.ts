@@ -24,7 +24,7 @@ const rows:Record<Locale,string[]>={
     "配信サービスの公式アプリですか？",
     "Smart Live Assistは独立した非公式ツールです。IRIAM・REALITYとの提携、承認、スポンサー関係はありません。各サービスのルールに沿ってご利用ください。",
     "次の配信を、\nもっと聞きやすく。",
-    "Android版の配布先は準備中です。正式なストアURLが決まり次第、こちらでご案内します。",
+    "Google PlayからAndroid版をダウンロード。",
     "英語版の実画面。表示・価格・体験期間は撮影時点のものです。"
   ],
   "en": [
@@ -49,7 +49,7 @@ const rows:Record<Locale,string[]>={
     "Is this an official streaming platform app?",
     "Smart Live Assist is an independent tool, not affiliated with, endorsed by or sponsored by IRIAM or REALITY. Follow each platform’s rules.",
     "Make your next stream\neasier to follow.",
-    "Android distribution is being prepared. The official store link will appear here once available.",
+    "Download the Android app on Google Play.",
     "Actual English-language screens. Prices and trial information reflect the time of capture."
   ],
   "zh-CN": [
@@ -74,7 +74,7 @@ const rows:Record<Locale,string[]>={
     "这是直播平台的官方应用吗？",
     "Smart Live Assist是独立工具，与IRIAM或REALITY无合作、授权或赞助关系。请遵守各平台规则。",
     "让下一场直播，\n更容易听懂。",
-    "Android版正在准备发布。正式商店链接确定后将在此公布。",
+    "从Google Play下载Android应用。",
     "英语版实际界面。价格及试用信息以截图时为准。"
   ],
   "zh-TW": [
@@ -99,7 +99,7 @@ const rows:Record<Locale,string[]>={
     "這是直播平台的官方應用程式嗎？",
     "Smart Live Assist是獨立工具，與IRIAM或REALITY無合作、授權或贊助關係。請遵守各平台規則。",
     "讓下一場直播，\n更容易聽懂。",
-    "Android版正在準備發布。正式商店連結確定後將在此公布。",
+    "從Google Play下載Android應用程式。",
     "英語版實際畫面。價格及試用資訊以截圖時為準。"
   ],
   "ko": [
@@ -124,7 +124,7 @@ const rows:Record<Locale,string[]>={
     "방송 플랫폼의 공식 앱인가요?",
     "Smart Live Assist는 독립 도구로 IRIAM·REALITY와 제휴, 승인, 후원 관계가 없습니다. 각 플랫폼의 규칙을 따라 이용하세요.",
     "다음 방송을,\n더 편하게 들으세요.",
-    "Android 배포를 준비 중입니다. 공식 스토어 링크가 정해지면 안내합니다.",
+    "Google Play에서 Android 앱을 다운로드하세요.",
     "영어판 실제 화면입니다. 가격과 체험 정보는 촬영 당시 기준입니다."
   ],
   "de": [
@@ -149,7 +149,7 @@ const rows:Record<Locale,string[]>={
     "Ist dies eine offizielle Plattform-App?",
     "Smart Live Assist ist unabhängig und wird nicht von IRIAM oder REALITY unterstützt oder gesponsert. Beachte die Regeln der jeweiligen Plattform.",
     "Dein nächster Stream.\nLeichter zu verfolgen.",
-    "Die Android-Veröffentlichung wird vorbereitet. Der offizielle Store-Link folgt hier.",
+    "Lade die Android-App bei Google Play herunter.",
     "Originalansichten auf Englisch. Preise und Testangaben entsprechen dem Aufnahmezeitpunkt."
   ],
   "fr": [
@@ -174,7 +174,7 @@ const rows:Record<Locale,string[]>={
     "Est-ce une application officielle ?",
     "Smart Live Assist est indépendant, sans affiliation, approbation ni parrainage d’IRIAM ou REALITY. Respectez les règles de chaque plateforme.",
     "Votre prochain direct,\nplus facile à suivre.",
-    "La distribution Android est en préparation. Le lien officiel sera publié ici.",
+    "Téléchargez l’application Android sur Google Play.",
     "Écrans réels en anglais. Prix et essai au moment de la capture."
   ],
   "es": [
@@ -199,7 +199,7 @@ const rows:Record<Locale,string[]>={
     "¿Es una aplicación oficial?",
     "Smart Live Assist es independiente, sin afiliación, aprobación ni patrocinio de IRIAM o REALITY. Respeta las normas de cada plataforma.",
     "Tu próximo directo,\nmás fácil de seguir.",
-    "La distribución para Android está en preparación. Publicaremos aquí el enlace oficial.",
+    "Descarga la aplicación Android en Google Play.",
     "Pantallas reales en inglés. Precios y prueba del momento de la captura."
   ],
   "it": [
@@ -224,7 +224,7 @@ const rows:Record<Locale,string[]>={
     "È un’app ufficiale?",
     "Smart Live Assist è indipendente e non è affiliata, approvata o sponsorizzata da IRIAM o REALITY. Rispetta le regole delle piattaforme.",
     "La prossima diretta,\npiù facile da seguire.",
-    "La distribuzione Android è in preparazione. Il link ufficiale verrà pubblicato qui.",
+    "Scarica l’app Android su Google Play.",
     "Schermate reali in inglese. Prezzi e prova al momento della cattura."
   ],
   "pt-BR": [
@@ -249,7 +249,7 @@ const rows:Record<Locale,string[]>={
     "É um aplicativo oficial?",
     "Smart Live Assist é independente, sem afiliação, aprovação ou patrocínio de IRIAM ou REALITY. Siga as regras de cada plataforma.",
     "Sua próxima live,\nmais fácil de acompanhar.",
-    "A distribuição Android está sendo preparada. O link oficial será publicado aqui.",
+    "Baixe o aplicativo Android no Google Play.",
     "Telas reais em inglês. Preços e teste da época da captura."
   ],
   "nl": [
@@ -274,7 +274,7 @@ const rows:Record<Locale,string[]>={
     "Is dit een officiële app?",
     "Smart Live Assist is onafhankelijk, zonder samenwerking, goedkeuring of sponsoring door IRIAM of REALITY. Volg de platformregels.",
     "Je volgende stream,\nmakkelijker te volgen.",
-    "De Android-distributie wordt voorbereid. De officiële winkellink verschijnt hier.",
+    "Download de Android-app via Google Play.",
     "Echte Engelse schermen. Prijzen en proefinformatie ten tijde van opname."
   ],
   "sv": [
@@ -299,7 +299,7 @@ const rows:Record<Locale,string[]>={
     "Är detta en officiell app?",
     "Smart Live Assist är oberoende och är inte ansluten till, godkänd eller sponsrad av IRIAM eller REALITY. Följ plattformarnas regler.",
     "Nästa sändning,\nlättare att följa.",
-    "Android-distributionen förbereds. Den officiella butikslänken visas här när den är klar.",
+    "Ladda ner Android-appen på Google Play.",
     "Verkliga engelska skärmar. Priser och provinformation vid skärmbildstillfället."
   ],
   "pl": [
@@ -324,7 +324,7 @@ const rows:Record<Locale,string[]>={
     "Czy to oficjalna aplikacja?",
     "Smart Live Assist jest niezależne, bez powiązań, poparcia ani sponsoringu IRIAM lub REALITY. Przestrzegaj zasad platform.",
     "Następna transmisja,\nłatwiejsza do śledzenia.",
-    "Dystrybucja na Androida jest przygotowywana. Oficjalny link do sklepu pojawi się tutaj.",
+    "Pobierz aplikację na Androida z Google Play.",
     "Rzeczywiste ekrany po angielsku. Ceny i próba z chwili wykonania zrzutu."
   ],
   "ru": [
@@ -349,7 +349,7 @@ const rows:Record<Locale,string[]>={
     "Это официальное приложение платформы?",
     "Smart Live Assist — независимый инструмент без связи, одобрения или спонсорства IRIAM и REALITY. Соблюдайте правила платформ.",
     "Следующий эфир —\nпроще следить.",
-    "Готовится распространение на Android. Официальная ссылка на магазин появится здесь.",
+    "Скачайте приложение для Android в Google Play.",
     "Реальные экраны на английском. Цены и пробный период на момент снимка."
   ],
   "ar": [
@@ -374,7 +374,7 @@ const rows:Record<Locale,string[]>={
     "هل هذا تطبيق رسمي للمنصات؟",
     "Smart Live Assist أداة مستقلة غير تابعة أو معتمدة أو ممولة من IRIAM أو REALITY. اتبع قواعد كل منصة.",
     "بثك القادم،\nأسهل في المتابعة.",
-    "يجري إعداد توزيع Android. سنضع رابط المتجر الرسمي هنا عند توفره.",
+    "نزّل تطبيق Android من Google Play.",
     "شاشات فعلية بالإنجليزية. الأسعار والتجربة كما ظهرت وقت التقاط الصور."
   ],
   "hi": [
@@ -399,7 +399,7 @@ const rows:Record<Locale,string[]>={
     "क्या यह आधिकारिक ऐप है?",
     "Smart Live Assist स्वतंत्र टूल है। इसका IRIAM या REALITY से संबद्धता, अनुमोदन या प्रायोजन नहीं है। हर प्लेटफ़ॉर्म के नियमों का पालन करें।",
     "अगली स्ट्रीम,\nआसानी से समझें।",
-    "Android वितरण की तैयारी चल रही है। आधिकारिक स्टोर लिंक उपलब्ध होने पर यहाँ मिलेगा।",
+    "Google Play से Android ऐप डाउनलोड करें।",
     "अंग्रेज़ी में वास्तविक स्क्रीन। कीमत और ट्रायल स्क्रीनशॉट लेते समय के हैं।"
   ],
   "th": [
@@ -424,7 +424,7 @@ const rows:Record<Locale,string[]>={
     "นี่คือแอปอย่างเป็นทางการหรือไม่?",
     "Smart Live Assist เป็นเครื่องมืออิสระ ไม่มีความร่วมมือ การรับรอง หรือการสนับสนุนจาก IRIAM หรือ REALITY ปฏิบัติตามกฎของแต่ละแพลตฟอร์ม",
     "สตรีมครั้งถัดไป\nติดตามง่ายขึ้น",
-    "กำลังเตรียมเผยแพร่บน Android ลิงก์ร้านค้าอย่างเป็นทางการจะแสดงที่นี่เมื่อพร้อม",
+    "ดาวน์โหลดแอป Android ได้จาก Google Play",
     "หน้าจอจริงภาษาอังกฤษ ราคาและข้อมูลทดลองแสดงตามที่บันทึกไว้"
   ],
   "vi": [
@@ -449,7 +449,7 @@ const rows:Record<Locale,string[]>={
     "Đây có phải ứng dụng chính thức không?",
     "Smart Live Assist là công cụ độc lập, không liên kết, được phê duyệt hay tài trợ bởi IRIAM hoặc REALITY. Tuân thủ quy tắc từng nền tảng.",
     "Buổi phát sóng tiếp theo,\ndễ theo dõi hơn.",
-    "Đang chuẩn bị phân phối Android. Liên kết cửa hàng chính thức sẽ hiển thị tại đây khi có.",
+    "Tải ứng dụng Android trên Google Play.",
     "Giao diện thực tế bằng tiếng Anh. Giá và thông tin dùng thử tại thời điểm chụp."
   ],
   "id": [
@@ -474,7 +474,7 @@ const rows:Record<Locale,string[]>={
     "Apakah ini aplikasi resmi?",
     "Smart Live Assist adalah alat independen, tidak berafiliasi, disetujui, atau disponsori oleh IRIAM atau REALITY. Patuhi aturan masing-masing platform.",
     "Siaran berikutnya,\nlebih mudah diikuti.",
-    "Distribusi Android sedang disiapkan. Tautan toko resmi akan muncul di sini setelah tersedia.",
+    "Unduh aplikasi Android di Google Play.",
     "Tampilan asli dalam bahasa Inggris. Harga dan informasi uji coba sesuai saat pengambilan gambar."
   ],
   "tr": [
@@ -499,7 +499,7 @@ const rows:Record<Locale,string[]>={
     "Bu resmi bir yayın platformu uygulaması mı?",
     "Smart Live Assist bağımsız bir araçtır, IRIAM veya REALITY ile bağlantılı, onaylı veya sponsorlu değildir. Her platformun kurallarına uyun.",
     "Bir sonraki yayınızı\ntakip etmek daha kolay.",
-    "Android dağıtımı hazırlanıyor. Resmi mağaza bağlantısı hazır olduğunda burada görünecektir.",
+    "Android uygulamasını Google Play’den indirin.",
     "İngilizce gerçek ekranlar. Fiyatlar ve deneme bilgileri çekim anındaki şekliyle gösterilmektedir."
   ]
 };
