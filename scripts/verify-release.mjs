@@ -1,3 +1,4 @@
+import {existsSync} from 'node:fs';
 import {readFile,stat} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
@@ -31,7 +32,7 @@ for(const locale of locales)for(const page of ['','support/']){
  }
 }
 const sitemap=await readFile(path.join(root,'sitemap.xml'),'utf8');
-assert.equal((sitemap.match(/<loc>/g)||[]).length,40);
+assert.equal((sitemap.match(/<loc>/g)||[]).length,40+(existsSync(path.join(root,'privacy/index.html'))?1:0));
 for(const url of urls)assert(sitemap.includes('<loc>'+url+'</loc>'));
 const robots=await readFile(path.join(root,'robots.txt'),'utf8');
 assert(robots.includes('Sitemap: '+new URL('/sitemap.xml',urls[0]).href));

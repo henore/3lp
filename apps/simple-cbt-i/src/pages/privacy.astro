@@ -1,0 +1,34 @@
+---
+import paragraphs from '../content/privacy.json';
+const canonical = new URL('/privacy/', Astro.site).href;
+const description = 'Privacy Policy for Simple CBT-I and Simple Fasting Timer. Information about local data, Apple Health, AI insights, purchases, and your privacy.';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Privacy Policy — Simple CBT-I</title>
+    <meta name="description" content={description}/>
+    <link rel="canonical" href={canonical}/>
+    <link rel="icon" href="/favicon.png"/>
+    <meta property="og:title" content="Privacy Policy — Simple CBT-I"/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content={canonical}/>
+    <meta property="og:image" content={new URL('/og.png', Astro.site).href}/>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header><a class="brand" href="/en/"><img src="/icon.png" alt="" width="40" height="40"/>Simple CBT-I</a></header>
+    <main id="main">
+      <article>
+        {paragraphs.map((paragraph,index) => index===0 ? <h1>{paragraph}</h1> : /^\d+\. /.test(paragraph) ? <h2>{paragraph}</h2> : paragraph.startsWith('- ') ? <ul>{paragraph.split(/\r?\n/).map(item=><li>{item.slice(2)}</li>)}</ul> : paragraph==='msz006.kobo@gmail.com' ? <p><a href={'mailto:'+paragraph}>{paragraph}</a></p> : <p>{paragraph}</p>)}
+      </article>
+    </main>
+    <footer><a href="/en/">Simple CBT-I</a><a href="/en/support/">Support</a></footer>
+  </body>
+</html>
+<style is:inline>
+  *{box-sizing:border-box}body{margin:0;background:#faf9fd;color:#302d40;font-family:system-ui,sans-serif;font-size:1rem;line-height:1.8}header,main,footer{width:min(800px,calc(100% - 40px));margin-inline:auto}header{padding-block:28px;border-bottom:1px solid #ddd9e8}.brand{display:inline-flex;align-items:center;gap:12px;font-weight:700;text-decoration:none;color:inherit}.brand img{border-radius:10px}main{padding-block:36px 56px}h1{font-size:clamp(2rem,6vw,3rem);line-height:1.2;margin:0 0 24px}h2{font-size:1.35rem;line-height:1.5;margin:36px 0 16px}p,ul{margin:0 0 18px}ul{padding-inline-start:25px}a{color:#375bd2;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #375bd2;outline-offset:5px}footer{display:flex;gap:24px;padding-block:24px;border-top:1px solid #ddd9e8}.skip{position:absolute;top:-100px;background:white;padding:12px}.skip:focus{top:8px}
+</style>

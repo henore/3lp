@@ -1,3 +1,4 @@
+import {existsSync} from 'node:fs';
 import {readFile,readdir,stat} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
@@ -20,6 +21,6 @@ for(const locale of locales){
  }
 }
 const xml=await readFile(path.join(root,'sitemap.xml'),'utf8');
-assert.equal((xml.match(/<loc>/g)||[]).length,40);
+assert.equal((xml.match(/<loc>/g)||[]).length,40+(existsSync(path.join(root,'privacy/index.html'))?1:0));
 assert((await readFile(path.join(root,'robots.txt'),'utf8')).includes('/sitemap.xml'));
 console.log('PASS: 20 locales, language/direction, unique h1, alternates, metadata, anchors, local assets, sitemap, robots.');
